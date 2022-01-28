@@ -12,6 +12,10 @@ export default class Timer {
         this.interval = null;
         this.remainingSeconds = 0;
 
+        // Asks the user for permission for notifications
+        // Move to when they set first timer?
+        this.notificationPermission(); 
+
 
         this.updateInterfaceControls();
 
@@ -24,15 +28,16 @@ export default class Timer {
         })
 
         this.el.reset.addEventListener("click", () => {
-            const inputMinutes = prompt("Enter number of minutes:");
+            const inputMinutes = prompt("How many minutes? (Max 1 Hour)")
 
-            if (inputMinutes < 60) {
+            if (inputMinutes < 61) {
                 this.stop();
                 this.remainingSeconds = inputMinutes * 60;
                 this.updateInterfaceTime();
             }
         })
     }
+
 
     updateInterfaceTime() {
         const minutes = Math.floor(this.remainingSeconds / 60);
@@ -84,7 +89,7 @@ export default class Timer {
         // check whether permission has been granted
         if (Notification.permission === "granted") {
             // If yes, sent notification
-            
+
             new Notification(message);
         }
     }
@@ -104,10 +109,12 @@ export default class Timer {
     // Return HTML
     static getHTML() {
         return `
+        
         <span class="timer-part timer-part-mins">00</span>
         <span class="timer-part">:</span>
         <span class="timer-part timer-part-secs">00</span>
         <br>
+<br>
         <button type="button" class="timer-btn timer-btn-control timer-btn-start">
             <i class="bi bi-play-fill"></i>
         </button>
