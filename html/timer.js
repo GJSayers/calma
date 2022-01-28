@@ -1,8 +1,15 @@
 const displayTime = document.getElementById("displayTime")
-// const btnTime15 = document.getElementById("btnTime15");
-// const btnTime25 = document.getElementById("btnTime25");
-// const btnTime35 = document.getElementById("btnTime35");
-const btnPause = document.getElementById("btnPause");
+const btnStart = document.getElementById("btnStart");
 const btnReset = document.getElementById("btnReset");
 
-let startingMins = 25;
+const timerStart = Date.now();
+let timerEnd;
+
+btnStart.addEventListener("click", runTimer)
+
+console.log(timerStart)
+
+
+function runTimer() {
+    console.log("Timer running!");
+}

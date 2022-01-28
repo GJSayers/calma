@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-<a href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-      rel="stylesheet"
-    />
-<style>
-body {
-    background-color: lightblue;
-    font-family: "Comfortaa", sans-serif;
-    text-align: center;
-}
-#displayTime {
-    font-size: 5rem;
-}
-</style>
+    <link <a href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: "Comfortaa", sans-serif;
+            text-align: center;
+        }
+
+        .timer {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 5rem;
+        }
+
+        .timer-part {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .timer-btn {
+            width: 3rem;
+            height: 3rem;
+            margin-left: 1rem;
+            border: none;
+            border-radius: 50%;
+            color: rgba(255, 255, 255, 1);
+            background-color:rgb(168, 39, 147);
+            cursor: pointer;
+        }
+        .timer-btn-start {
+            background-color: green;
+        }
+        .timer-btn-stop {
+            background-color: red;
+        }
+    </style>
     <title>Timer</title>
 </head>
+
 <body>
 
     <h1>Timer</h1>
-    <h1 id="displayTime">25:00</h1>
-    <button id="btnPause">Pause</button>
-    <button id="btnReset">Reset</button>
+      <div class="timer">
+        <span class="timer-part timer-part-mins">00</span>
+        <span class="timer-part">:</span>
+        <span class="timer-part timer-part-secs">00</span>
+        <br>
+        <button type="button" class="timer-btn timer-btn-control timer-btn-start">
+            <i class="bi bi-play-fill"></i>
+        </button>
+        <button type="button" class="timer-btn timer-btn-reset">
+            <i class="bi bi-stopwatch"></i>
+        </button>
+    </div>
 
-    
+
 </body>
-<script src="timer.js"></script>
+<script src="timer.js" type="module"></script>
+
 </html>
