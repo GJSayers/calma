@@ -63,6 +63,8 @@ export default class Timer {
 
             if (this.remainingSeconds === 0) {
                 this.stop();
+
+                this.notificationSend("Time to take a break!")
             }
         }, 1000);
 
@@ -77,14 +79,17 @@ export default class Timer {
         this.updateInterfaceControls();
     }
 
-    notification(message) {
+    // Sends notifications to the user
+    notificationSend(message) {
         // check whether permission has been granted
         if (Notification.permission === "granted") {
             // If yes, sent notification
-            var notification = new Notification(message);
+            
+            new Notification(message);
         }
     }
 
+// Ask user for notifcation permission
     notificationPermission() {
         if (Notification.permission !== 'denied' || Notification.permission === "default") {
             Notification.requestPermission(function (permission) {
@@ -96,6 +101,7 @@ export default class Timer {
         }
     }
 
+    // Return HTML
     static getHTML() {
         return `
         <span class="timer-part timer-part-mins">00</span>
