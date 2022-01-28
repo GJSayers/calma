@@ -9,8 +9,10 @@ export default class Timer {
             reset: root.querySelector(".timer-btn-reset")
         };
 
-        this.interval = null;
-        this.remainingSeconds = 0;
+        this.interval = 40;
+        this.remainingSeconds = 90;
+
+        this.updateInterfaceControls();
 
         this.el.control.addEventListener("click", () => {
             // When Control button is clickec
@@ -19,7 +21,26 @@ export default class Timer {
         this.el.reset.addEventListener("click", () => {
             // When Reset button is clickec
         })
+    }
 
+    updateInterfaceTime() {
+        const minutes = Math.floor(this.remainingSeconds / 60);
+        const seconds = this.remainingSeconds % 60;
+
+        this.el.mins.textContent = minutes.toString().padStart(2, "0");
+        this.el.secs.textContent = seconds.toString().padStart(2, "0");
+    }
+
+    updateInterfaceControls() {
+        if (this.interval === null) {
+            this.el.control.innerHTML = `<i class="bi bi-play-fill"></i>`;
+            this.el.control.classList.add("timer-btn-start");
+            this.el.control.classList.remove("timer-btn-stop");
+        } else {
+            this.el.control.innerHTML = `<i class="bi bi-pause-fill"></i>`;
+            this.el.control.classList.add("timer-btn-stop");
+            this.el.control.classList.remove("timer-btn-start");
+        }
     }
 
     static getHTML() {
