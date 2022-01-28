@@ -1,6 +1,1569 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'dashboard/css/home.css' %}">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+{% endblock %}
+
+
 {% block content %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calma</title>
+  </head>
+  <body>
+    <svg
+      class="day-clouds"
+      viewBox="0 0 1920 300"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xml:space="preserve"
+      xmlns:serif="http://www.serif.com/"
+      style="
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        stroke-linejoin: round;
+        stroke-miterlimit: 2;
+      "
+    >
+      <g id="background" transform="matrix(1,0,0,1,-145,-91)">
+        <g id="clouds">
+          <g id="cloud" transform="matrix(1,0,0,1,50,1.13452)">
+            <path
+              d="M143,301C123.963,297.677 124,260.5 128,245C132,229.5 150.384,214.71 167,208C184.333,201 216.25,196.833 232,203C247.75,209.167 248.167,237.833 261.5,245C274.833,252.167 299.083,250.667 312,246C324.422,241.512 328.333,223 339,217C349.667,211 365,208.167 376,210C387,211.833 396.955,219.955 405,228C414.167,237.167 420,259.833 431,265C442,270.167 457.929,255.693 471,259C484.833,262.5 504.333,276.667 514,286C521.829,293.559 539.874,314.56 529,315C467.167,317.5 209.833,312.667 143,301Z"
+              style="fill: url(#_Linear1)"
+            />
+          </g>
+          <g
+            id="cloud2"
+            transform="matrix(-1.1032,0,0,1.23348,2171.73,-127.695)"
+          >
+            <path
+              d="M143,301C123.963,297.677 124,260.5 128,245C132,229.5 150.384,214.71 167,208C184.333,201 216.703,198.725 232,203C245.067,206.652 248.167,227.429 258.781,233.65C269.395,239.871 283.444,242.865 295.684,240.325C309.054,237.55 325.614,222.054 339,217C350.743,212.566 365,208.167 376,210C387,211.833 396.955,219.955 405,228C414.167,237.167 420,259.833 431,265C442,270.167 457.929,255.693 471,259C484.833,262.5 504.333,276.667 514,286C521.829,293.559 539.874,314.56 529,315C467.167,317.5 209.833,312.667 143,301Z"
+              style="fill: url(#_Linear2)"
+            />
+          </g>
+          <path
+            id="cloud3"
+            d="M828,350C816.193,349.127 829,321.368 837,315.642C845,309.915 863,315.642 876,315.642C890,315.642 906.828,320.557 921,315.642C937.167,310.035 958.927,287.107 973,282C983.207,278.296 994.682,283.497 1005.44,285C1020.94,287.167 1046.57,295.167 1066,295C1085.02,294.837 1109,283.5 1122,284C1130.69,284.334 1135.47,296.335 1144,298C1157.67,300.667 1185.83,297.06 1204,300C1220.92,302.739 1243.5,307.808 1253,315.642C1261.32,322.505 1271.75,346.131 1261,347C1190.17,352.726 898.667,355.226 828,350Z"
+            style="fill: url(#_Linear3)"
+          />
+        </g>
+      </g>
+      <defs>
+        <linearGradient
+          id="_Linear1"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(-8,98.6417,-98.6417,-8,295,217)"
+        >
+          <stop offset="0" style="stop-color: white; stop-opacity: 0.76" />
+          <stop offset="0.55" style="stop-color: white; stop-opacity: 0.6" />
+          <stop offset="1" style="stop-color: white; stop-opacity: 0" />
+        </linearGradient>
+        <linearGradient
+          id="_Linear2"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(-6.21646e-15,90.8002,101.523,5.55991e-15,329.133,213.782)"
+        >
+          <stop offset="0" style="stop-color: white; stop-opacity: 0.56" />
+          <stop offset="0.58" style="stop-color: white; stop-opacity: 0.45" />
+          <stop offset="0.8" style="stop-color: white; stop-opacity: 0.22" />
+          <stop offset="1" style="stop-color: white; stop-opacity: 0" />
+        </linearGradient>
+        <linearGradient
+          id="_Linear3"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(2e-06,0,0,2e-06,1044.4,489)"
+        >
+          <stop offset="0" style="stop-color: white; stop-opacity: 0.5" />
+          <stop
+            offset="0.62"
+            style="stop-color: rgb(242, 242, 242); stop-opacity: 0.42"
+          />
+          <stop
+            offset="0.82"
+            style="stop-color: rgb(212, 212, 212); stop-opacity: 0.22"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(179, 179, 179); stop-opacity: 0"
+          />
+        </linearGradient>
+      </defs>
+    </svg>
+    <svg
+      id="all-stars"
+      viewBox="0 0 1920 1080"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xml:space="preserve"
+      xmlns:serif="http://www.serif.com/"
+      style="
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        stroke-linejoin: round;
+        stroke-miterlimit: 2;
+      "
+    >
+      <g class="twinkle-star2" id="stars">
+        <g id="star-l" transform="matrix(6,0,0,6,-1650,-750)">
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial1)" />
+        </g>
+        <g id="star-m" transform="matrix(5,0,0,5,-856,-553)">
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial2)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-m1"
+          serif:id="star-m"
+          transform="matrix(5,0,0,5,-1208,-644)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial3)" />
+        </g>
+        <g id="star-m2" serif:id="star-m" transform="matrix(5,0,0,5,-394,-709)">
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial4)" />
+        </g>
+        <g id="star-s" transform="matrix(3.5,0,0,3.5,-517,-399)">
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial5)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-s1"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,559,-377)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial6)" />
+        </g>
+        <g
+          id="star-s2"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,365,-471)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial7)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-l1"
+          serif:id="star-l"
+          transform="matrix(6,0,0,6,-1871,-727)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial8)" />
+        </g>
+        <g
+          id="star-l2"
+          serif:id="star-l"
+          transform="matrix(6,0,0,6,-104.5,-884)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial9)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-l3"
+          serif:id="star-l"
+          transform="matrix(6,0,0,6,-1240.5,-886)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial10)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-m3"
+          serif:id="star-m"
+          transform="matrix(5,0,0,5,-1077,-530)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial11)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-m4"
+          serif:id="star-m"
+          transform="matrix(5,0,0,5,-1429,-621)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial12)" />
+        </g>
+        <g id="star-m5" serif:id="star-m" transform="matrix(5,0,0,5,-615,-686)">
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial13)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s3"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,-738,-376)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial14)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s4"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,338,-354)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial15)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s5"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,144,-448)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial16)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-l4"
+          serif:id="star-l"
+          transform="matrix(6,0,0,6,-1511,-776)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial17)" />
+        </g>
+        <g id="star-m6" serif:id="star-m" transform="matrix(5,0,0,5,-717,-579)">
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial18)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-m7"
+          serif:id="star-m"
+          transform="matrix(5,0,0,5,-1069,-670)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial19)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-m8"
+          serif:id="star-m"
+          transform="matrix(5,0,0,5,-255,-735)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial20)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s6"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,-378,-425)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial21)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-s7"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,698,-403)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial22)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s8"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,504,-497)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial23)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s9"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,625,-507)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial24)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-s10"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,-1132,-497)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial25)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s11"
+          serif:id="star-s"
+          transform="matrix(3.5,0,0,3.5,-842,-511)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial26)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-l5"
+          serif:id="star-l"
+          transform="matrix(-6.13589,0,0,6,3629.89,-540)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial27)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-m9"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,2817.91,-343)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial28)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-m10"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,3177.88,-434)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial29)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-m11"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,2345.44,-499)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial30)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s12"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,2471.23,-189)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial31)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-s13"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,1370.86,-167)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial32)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s14"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,1569.25,-261)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial33)" />
+        </g>
+        <g
+          id="star-l6"
+          serif:id="star-l"
+          transform="matrix(-6.13589,0,0,6,3855.9,-517)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial34)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-l7"
+          serif:id="star-l"
+          transform="matrix(-6.13589,0,0,6,2049.39,-674)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial35)" />
+        </g>
+        <g
+          id="star-l8"
+          serif:id="star-l"
+          transform="matrix(-6.13589,0,0,6,3211.12,-676)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial36)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-m12"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,3043.91,-320)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial37)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-m13"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,3403.89,-411)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial38)" />
+        </g>
+        <g
+          id="star-m14"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,2571.45,-476)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial39)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-s15"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,2697.24,-166)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial40)" />
+        </g>
+        <g
+          id="star-s16"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,1596.87,-144)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial41)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s17"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,1795.26,-238)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial42)" />
+        </g>
+        <g
+          id="star-l9"
+          serif:id="star-l"
+          transform="matrix(-6.13589,0,0,6,3487.74,-566)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial43)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-m15"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,2675.76,-369)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial44)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-m16"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,3035.73,-460)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial45)" />
+        </g>
+        <g
+          id="star-m17"
+          serif:id="star-m"
+          transform="matrix(-5.11324,0,0,5,2203.3,-525)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial46)" />
+        </g>
+        <g
+          id="star-s18"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,2329.08,-215)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial47)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s19"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,1228.71,-193)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial48)" />
+        </g>
+        <g
+          id="star-s20"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,1427.11,-287)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial49)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-s21"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,1303.37,-297)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial50)" />
+        </g>
+        <g
+          class="twinkle-star"
+          id="star-s22"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,3100.16,-287)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial51)" />
+        </g>
+        <g
+          class="twinkle-star2"
+          id="star-s23"
+          serif:id="star-s"
+          transform="matrix(-3.57927,0,0,3.5,2803.59,-301)"
+        >
+          <circle cx="332" cy="152" r="2" style="fill: url(#_Radial52)" />
+        </g>
+      </g>
+      <defs>
+        <radialGradient
+          id="_Radial1"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial2"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial3"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial4"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial5"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial6"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial7"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial8"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial9"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial10"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial11"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial12"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial13"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial14"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial15"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial16"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial17"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial18"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial19"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial20"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial21"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial22"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial23"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial24"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial25"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial26"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial27"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial28"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial29"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial30"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial31"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial32"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial33"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial34"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial35"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial36"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial37"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial38"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial39"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial40"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial41"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial42"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial43"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial44"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial45"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial46"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial47"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial48"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial49"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial50"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial51"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+        <radialGradient
+          id="_Radial52"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(1.22465e-16,2,-2,1.22465e-16,332,152)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(206, 255, 255); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(157, 62, 127); stop-opacity: 0"
+          />
+        </radialGradient>
+      </defs>
+    </svg>
+    <svg
+      id="all-clouds"
+      viewBox="0 0 1920 600"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xml:space="preserve"
+      xmlns:serif="http://www.serif.com/"
+      style="
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        stroke-linejoin: round;
+        stroke-miterlimit: 2;
+      "
+    >
+      <g id="clouds" transform="matrix(1,0,0,1,6,-113)">
+        <g
+          class="cloud1"
+          id="night-cloud"
+          transform="matrix(0.630868,0,0,0.630868,482.542,20.7545)"
+        >
+          <path
+            d="M1598.16,180.894C1451.49,165.394 1277.36,167.982 1132,182C994.505,195.259 853.5,247.5 726,265C607.222,281.303 437.167,276.667 367,287C342.668,290.583 280.73,323.015 305,327C360.833,336.167 569.584,343.795 702,342C898.667,339.333 1300.76,312.856 1485,311C1592.68,309.915 1719.6,336.861 1807.43,330.861C1877.96,326.044 2046.88,299.995 2012,275C1977.12,250.005 1738.84,195.762 1598.16,180.894Z"
+            style="fill: url(#_Linear1)"
+          />
+        </g>
+        <g
+          class="cloud2"
+          id="night-cloud1"
+          serif:id="night-cloud"
+          transform="matrix(0.473667,0,0,0.473667,1010.62,377.761)"
+        >
+          <path
+            d="M1571.12,127C1448.73,120.297 1272.85,159 1132,182C995.673,204.261 853.5,247.5 726,265C607.222,281.303 437.167,276.667 367,287C342.668,290.583 280.73,323.015 305,327C360.833,336.167 569.584,343.795 702,342C898.667,339.333 1312.96,310.738 1485,311C1568.78,311.128 1670.66,358.37 1734.22,343.573C1792.45,330.014 1893.51,258.316 1866.33,222.22C1839.15,186.125 1674.36,132.655 1571.12,127Z"
+            style="fill: url(#_Linear2)"
+          />
+        </g>
+        <g
+          class="cloud3"
+          id="night-cloud2"
+          serif:id="night-cloud"
+          transform="matrix(-0.53184,0,0,0.630868,1093.97,190.514)"
+        >
+          <clipPath id="_clip3">
+            <path
+              d="M1728.81,176.139C1582.14,160.639 1299.13,167.19 1132,182C994.407,194.193 853.5,247.5 726,265C607.222,281.303 437.167,276.667 367,287C342.668,290.583 280.73,323.015 305,327C360.833,336.167 569.58,343.438 702,342C947.604,339.333 1363.62,313.649 1485,311C1623.86,307.97 1813.56,332.106 1901.39,326.106C1941.91,323.338 2040.77,299.995 2012,275C1983.24,250.005 1828.24,186.647 1728.81,176.139Z"
+            />
+          </clipPath>
+          <g clip-path="url(#_clip3)">
+            <g transform="matrix(-1.88026,0,0,1.58512,2068.24,-122.869)">
+              <use
+                xlink:href="#_Image4"
+                x="27.177"
+                y="184.073"
+                width="913.544px"
+                height="110.365px"
+                transform="matrix(0.999501,0,0,0.99428,0,0)"
+              />
+            </g>
+          </g>
+        </g>
+      </g>
+      <defs>
+        <linearGradient
+          id="_Linear1"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(-11.0958,283.282,-283.282,-11.0958,1395.63,97.0813)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(93, 93, 164); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(93, 93, 164); stop-opacity: 0.31"
+          />
+        </linearGradient>
+        <linearGradient
+          id="_Linear2"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="matrix(-11.0958,283.282,-283.282,-11.0958,1395.63,97.0813)"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(93, 93, 164); stop-opacity: 1"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(93, 93, 164); stop-opacity: 0.31"
+          />
+        </linearGradient>
+        <image
+          id="_Image4"
+          width="914px"
+          height="111px"
+          xlink:href="data:image/png;base64,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"
+        />
+      </defs>
+    </svg>
+    <div class="headbox">
+      <h1 id="calma-header">
+        <svg
+          width="206"
+          height="52"
+          viewBox="0 0 206 52"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M25.864 51.64C22.408 51.64 19.1654 50.9787 16.136 49.656C13.1494 48.3333 10.504 46.4987 8.20002 44.152C5.93868 41.7627 4.16802 39.032 2.88802 35.96C1.60802 32.8453 0.968018 29.5173 0.968018 25.976C0.968018 22.4773 1.58668 19.192 2.82402 16.12C4.10402 13.0053 5.87468 10.2747 8.13602 7.92801C10.44 5.58134 13.0854 3.74667 16.072 2.424C19.1014 1.05867 22.3654 0.376007 25.864 0.376007C28.936 0.376007 31.7307 0.824006 34.248 1.72001C36.7654 2.61601 39.1974 4.04534 41.544 6.00801C41.928 6.30667 42.1414 6.66934 42.184 7.096C42.2694 7.48 42.2267 7.864 42.056 8.248C41.8854 8.58934 41.6294 8.84534 41.288 9.01601C41.2027 9.35734 40.9894 9.61334 40.648 9.784C40.3067 9.95467 39.9014 10.0187 39.432 9.97601C39.0054 9.93334 38.5787 9.74134 38.152 9.40001C36.488 7.94934 34.6747 6.88267 32.712 6.2C30.7494 5.47467 28.4667 5.11201 25.864 5.11201C23.0907 5.11201 20.488 5.66667 18.056 6.776C15.6667 7.88534 13.5547 9.40001 11.72 11.32C9.88535 13.24 8.43468 15.4587 7.36802 17.976C6.34402 20.4933 5.83202 23.16 5.83202 25.976C5.83202 28.8773 6.34402 31.5867 7.36802 34.104C8.43468 36.6213 9.88535 38.84 11.72 40.76C13.5547 42.68 15.6667 44.1947 18.056 45.304C20.488 46.3707 23.0907 46.904 25.864 46.904C28.2107 46.904 30.4294 46.52 32.52 45.752C34.6107 44.984 36.5947 43.8747 38.472 42.424C38.984 41.9973 39.5174 41.8267 40.072 41.912C40.6694 41.9973 41.1814 42.2533 41.608 42.68C42.0347 43.1067 42.248 43.6613 42.248 44.344C42.248 44.6853 42.184 45.0053 42.056 45.304C41.9707 45.56 41.8 45.8373 41.544 46.136C39.368 48.1413 36.936 49.5707 34.248 50.424C31.56 51.2347 28.7654 51.64 25.864 51.64Z"
+            fill="white"
+          />
+          <path
+            d="M64.7465 51.32C61.4612 51.32 58.5172 50.552 55.9145 49.016C53.3119 47.4373 51.2425 45.304 49.7065 42.616C48.2132 39.928 47.4665 36.8987 47.4665 33.528C47.4665 30.1147 48.2345 27.064 49.7705 24.376C51.3492 21.688 53.4825 19.576 56.1705 18.04C58.8585 16.4613 61.8878 15.672 65.2585 15.672C68.6292 15.672 71.6372 16.4613 74.2825 18.04C76.9705 19.576 79.0825 21.688 80.6185 24.376C82.1972 27.064 83.0079 30.1147 83.0505 33.528L81.0665 35.064C81.0665 38.136 80.3412 40.9093 78.8905 43.384C77.4825 45.816 75.5412 47.7573 73.0665 49.208C70.6345 50.616 67.8612 51.32 64.7465 51.32ZM65.2585 46.84C67.7332 46.84 69.9305 46.264 71.8505 45.112C73.8132 43.96 75.3492 42.3813 76.4585 40.376C77.6105 38.328 78.1865 36.0453 78.1865 33.528C78.1865 30.968 77.6105 28.6853 76.4585 26.68C75.3492 24.6747 73.8132 23.096 71.8505 21.944C69.9305 20.7493 67.7332 20.152 65.2585 20.152C62.8265 20.152 60.6292 20.7493 58.6665 21.944C56.7039 23.096 55.1465 24.6747 53.9945 26.68C52.8425 28.6853 52.2665 30.968 52.2665 33.528C52.2665 36.0453 52.8425 38.328 53.9945 40.376C55.1465 42.3813 56.7039 43.96 58.6665 45.112C60.6292 46.264 62.8265 46.84 65.2585 46.84ZM80.5545 51C79.8292 51 79.2318 50.7867 78.7625 50.36C78.2932 49.8907 78.0585 49.2933 78.0585 48.568V37.624L79.2745 32.568L83.0505 33.528V48.568C83.0505 49.2933 82.8158 49.8907 82.3465 50.36C81.8772 50.7867 81.2799 51 80.5545 51Z"
+            fill="white"
+          />
+          <path
+            d="M100.187 51C98.4803 51 96.9444 50.5307 95.579 49.592C94.2564 48.6533 93.211 47.352 92.443 45.688C91.7177 44.024 91.355 42.104 91.355 39.928V3.44801C91.355 2.72267 91.5684 2.14667 91.995 1.72001C92.4644 1.25067 93.0617 1.01601 93.787 1.01601C94.5124 1.01601 95.0883 1.25067 95.515 1.72001C95.9843 2.14667 96.219 2.72267 96.219 3.44801V39.928C96.219 41.7627 96.5817 43.256 97.307 44.408C98.075 45.56 99.035 46.136 100.187 46.136H101.787C102.427 46.136 102.939 46.3707 103.323 46.84C103.707 47.2667 103.899 47.8427 103.899 48.568C103.899 49.2933 103.622 49.8907 103.067 50.36C102.555 50.7867 101.872 51 101.019 51H100.187Z"
+            fill="white"
+          />
+          <path
+            d="M157.994 51C157.268 51 156.671 50.7867 156.202 50.36C155.732 49.8907 155.498 49.2933 155.498 48.568V30.136C155.498 27.1067 154.708 24.7173 153.13 22.968C151.551 21.176 149.524 20.28 147.05 20.28C144.404 20.28 142.228 21.176 140.522 22.968C138.858 24.7173 138.047 27.064 138.09 30.008H133.674C133.716 27.1493 134.335 24.632 135.53 22.456C136.724 20.28 138.367 18.5947 140.458 17.4C142.548 16.2053 144.916 15.608 147.562 15.608C150.079 15.608 152.298 16.2053 154.218 17.4C156.18 18.5947 157.695 20.28 158.762 22.456C159.871 24.632 160.426 27.192 160.426 30.136V48.568C160.426 49.2933 160.191 49.8907 159.722 50.36C159.295 50.7867 158.719 51 157.994 51ZM113.194 51C112.426 51 111.807 50.7867 111.338 50.36C110.911 49.8907 110.698 49.2933 110.698 48.568V18.488C110.698 17.7627 110.911 17.1653 111.338 16.696C111.807 16.2267 112.426 15.992 113.194 15.992C113.919 15.992 114.495 16.2267 114.922 16.696C115.391 17.1653 115.626 17.7627 115.626 18.488V48.568C115.626 49.2933 115.391 49.8907 114.922 50.36C114.495 50.7867 113.919 51 113.194 51ZM135.658 51C134.932 51 134.335 50.7867 133.866 50.36C133.396 49.8907 133.162 49.2933 133.162 48.568V30.136C133.162 27.1067 132.372 24.7173 130.794 22.968C129.215 21.176 127.188 20.28 124.714 20.28C122.068 20.28 119.892 21.1547 118.186 22.904C116.479 24.6107 115.626 26.8507 115.626 29.624H112.106C112.191 26.8933 112.788 24.4827 113.898 22.392C115.05 20.2587 116.607 18.5947 118.57 17.4C120.532 16.2053 122.751 15.608 125.226 15.608C127.743 15.608 129.962 16.2053 131.882 17.4C133.844 18.5947 135.359 20.28 136.426 22.456C137.535 24.632 138.09 27.192 138.09 30.136V48.568C138.09 49.2933 137.855 49.8907 137.386 50.36C136.959 50.7867 136.383 51 135.658 51Z"
+            fill="white"
+          />
+          <path
+            d="M186.747 51.32C183.461 51.32 180.517 50.552 177.915 49.016C175.312 47.4373 173.243 45.304 171.707 42.616C170.213 39.928 169.467 36.8987 169.467 33.528C169.467 30.1147 170.235 27.064 171.771 24.376C173.349 21.688 175.483 19.576 178.171 18.04C180.859 16.4613 183.888 15.672 187.259 15.672C190.629 15.672 193.637 16.4613 196.283 18.04C198.971 19.576 201.083 21.688 202.619 24.376C204.197 27.064 205.008 30.1147 205.051 33.528L203.067 35.064C203.067 38.136 202.341 40.9093 200.891 43.384C199.483 45.816 197.541 47.7573 195.067 49.208C192.635 50.616 189.861 51.32 186.747 51.32ZM187.259 46.84C189.733 46.84 191.931 46.264 193.851 45.112C195.813 43.96 197.349 42.3813 198.459 40.376C199.611 38.328 200.187 36.0453 200.187 33.528C200.187 30.968 199.611 28.6853 198.459 26.68C197.349 24.6747 195.813 23.096 193.851 21.944C191.931 20.7493 189.733 20.152 187.259 20.152C184.827 20.152 182.629 20.7493 180.667 21.944C178.704 23.096 177.147 24.6747 175.995 26.68C174.843 28.6853 174.267 30.968 174.267 33.528C174.267 36.0453 174.843 38.328 175.995 40.376C177.147 42.3813 178.704 43.96 180.667 45.112C182.629 46.264 184.827 46.84 187.259 46.84ZM202.555 51C201.829 51 201.232 50.7867 200.763 50.36C200.293 49.8907 200.059 49.2933 200.059 48.568V37.624L201.275 32.568L205.051 33.528V48.568C205.051 49.2933 204.816 49.8907 204.347 50.36C203.877 50.7867 203.28 51 202.555 51Z"
+            fill="white"
+          />
+        </svg>
+      </h1>
+      <div class="toggle-container">
+        <input type="checkbox" id="switch" name="theme" /><label
+          id="darkLight"
+          for="switch"
+          checked
+        ></label>
+      </div>
+    </div>
+  </body>
+  
+  <script>
+    let checkbox = document.querySelector("input[name=theme");
+
+checkbox.addEventListener("change", function () {
+if (this.checked) {
+  document.documentElement.setAttribute("data-theme", "dark");
+} else {
+  document.documentElement.setAttribute("data-theme", "light");
+}
+});
+</script>
+</html>
+
 
 {% include 'dashboard/includes/timer_modal.html' %}
 {% include 'dashboard/includes/video_modal.html' %}
