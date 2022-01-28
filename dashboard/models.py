@@ -35,6 +35,9 @@ class MindfulCheck(models.Model):
     physical = models.IntegerField(null=False, default=4)
     social = models.IntegerField(null=False, default=4)
     community = models.IntegerField(null=False, default=4)
+    career = models.IntegerField(null=False, default=4)
+    overall = models.DecimalField(null=True, decimal_places=2,
+                                  max_digits=4, default=0)
 
 
 class Message(models.Model):
