@@ -11,25 +11,25 @@ export default class Timer {
         };
 
         this.interval = null;
-        this.remainingSeconds = 0;
+        this.remainingSeconds = 600;
+
+        this.updateInterfaceControls();
+        this.updateInterfaceTime();
 
         // Asks the user for permission for notifications
         // Move to when they set first timer?
-        this.notificationPermission(); 
+        this.notificationPermission();
 
-
-        this.updateInterfaceControls();
 
         // Add event listener to buttons for setting timer
-        this.el.timerButtons.forEach( item => {
+        this.el.timerButtons.forEach(item => {
             item.addEventListener("click", event => {
                 this.stop();
                 this.remainingSeconds = event.target.innerHTML * 60;
-                console.log(event.target.innerHTML);
                 this.updateInterfaceTime();
             })
         })
-        
+
 
         // Event listener to start timer
         this.el.control.addEventListener("click", () => {
@@ -40,15 +40,6 @@ export default class Timer {
             }
         })
 
-        this.el.reset.addEventListener("click", () => {
-            const inputMinutes = prompt("How many minutes? (Max 1 Hour)")
- 
-            if (inputMinutes < 61) {
-                this.stop();
-                this.remainingSeconds = inputMinutes * 60;
-                this.updateInterfaceTime();
-            }
-        })
     }
 
 
@@ -102,29 +93,23 @@ export default class Timer {
         // check whether permission has been granted
         if (Notification.permission === "granted") {
             // If yes, sent notification
-
             new Notification(message);
         }
     }
 
-// Ask user for notifcation permission
+    // Ask user for notifcation permission
     notificationPermission() {
         if (Notification.permission !== 'denied' || Notification.permission === "default") {
-            Notification.requestPermission(function (permission) {
-                // If the user accepts, let's create a notification
-                if (permission === "granted") {
-                    var notification = new Notification("You'll receive timer notifications");
-                }
-            });
+            Notification.requestPermission(function (permission) {});
         }
     }
 
     // Return HTML
     static getHTML() {
         return `
-        <button type="button" class="timer-btn-set" id="btn-10">10</button>
-        <button type="button" class="timer-btn-set" id="btn-25">25</button>
-        <button type="button" class="timer-btn-set" id="btn-35">35</button>
+        <button type="button" class="timer-btn-set">5</button>
+        <button type="button" class="timer-btn-set">10</button>
+        <button type="button" class="timer-btn-set">25</button>
         <br>
         <span class="timer-part timer-part-mins">00</span>
         <span class="timer-part">:</span>
@@ -134,9 +119,6 @@ export default class Timer {
         <button type="button" class="timer-btn timer-btn-control timer-btn-start">
             <i class="bi bi-play-fill"></i>
         </button>
-        <button type="button" class="timer-btn timer-btn-reset">
-            <i class="bi bi-stopwatch"></i>
-        </button> 
         `;
     }
 }
