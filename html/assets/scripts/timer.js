@@ -7,7 +7,6 @@ export default class Timer {
             mins: root.querySelector(".timer-part-mins"),
             secs: root.querySelector(".timer-part-secs"),
             control: root.querySelector(".timer-btn-control"),
-            reset: root.querySelector(".timer-btn-reset"),
             sound: root.querySelector("#sound-effect")
         };
 
