@@ -9,8 +9,17 @@ export default class Timer {
             reset: root.querySelector(".timer-btn-reset")
         };
 
-        console.log(this.el)
-        
+        this.interval = null;
+        this.remainingSeconds = 0;
+
+        this.el.control.addEventListener("click", () => {
+            // When Control button is clickec
+        })
+
+        this.el.reset.addEventListener("click", () => {
+            // When Reset button is clickec
+        })
+
     }
 
     static getHTML() {
