@@ -16,11 +16,6 @@ export default class Timer {
         this.updateInterfaceControls();
         this.updateInterfaceTime();
 
-        // Asks the user for permission for notifications
-        // Move to when they set first timer?
-        this.notificationPermission();
-
-
         // Add event listener to buttons for setting timer
         this.el.timerButtons.forEach(item => {
             item.addEventListener("click", event => {
@@ -30,9 +25,12 @@ export default class Timer {
             })
         })
 
-
         // Event listener to start timer
         this.el.control.addEventListener("click", () => {
+
+            // Asks the user for permission for notifications
+            this.notificationPermission();
+
             if (this.interval === null) {
                 this.start();
             } else {
