@@ -7,11 +7,12 @@ export default class Timer {
             mins: root.querySelector(".timer-part-mins"),
             secs: root.querySelector(".timer-part-secs"),
             control: root.querySelector(".timer-btn-control"),
-            reset: root.querySelector(".timer-btn-reset")
+            reset: root.querySelector(".timer-btn-reset"),
+            sound: root.querySelector("#sound-effect")
         };
 
         this.interval = null;
-        this.remainingSeconds = 600;
+        this.remainingSeconds = 10;
 
         this.updateInterfaceControls();
         this.updateInterfaceTime();
@@ -70,7 +71,7 @@ export default class Timer {
 
             if (this.remainingSeconds === 0) {
                 this.stop();
-
+                this.el.sound.play();
                 this.notificationSend("Time to take a break!")
             }
         }, 1000);
@@ -117,6 +118,9 @@ export default class Timer {
         <button type="button" class="timer-btn timer-btn-control timer-btn-start">
             <i class="bi bi-play-fill"></i>
         </button>
+        <audio id="sound-effect">
+        <source src="assets/sounds/sound-effect.mp3">
+        </audio>
         `;
     }
 }
