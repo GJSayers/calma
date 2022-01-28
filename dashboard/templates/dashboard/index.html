@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'dashboard/css/home.css' %}">
+    {% comment %}<link rel="stylesheet" href="{% static 'dashboard/css/home.css' %}">{% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     <link
       rel="stylesheet"
@@ -27,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    {% comment %} <link rel="stylesheet" href="./style.css" /> {% endcomment %}
     <title>Calma</title>
   </head>
   <body>
