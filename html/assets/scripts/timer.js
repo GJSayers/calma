@@ -115,7 +115,7 @@ export default class Timer {
         <br>
 <br>
         <button type="button" class="timer-btn timer-btn-control timer-btn-start">
-            <i class="bi bi-play-fill"></i>
+        <i class="bi bi-play-fill"></i>
         </button>
         <audio id="sound-effect">
         <source src="assets/sounds/sound-effect.mp3">
