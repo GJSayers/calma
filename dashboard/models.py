@@ -9,18 +9,25 @@ class UserPreferences(models.Model):
     A user preferences model to determine the mindful dashboard preferences
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    yoga = models.BooleanField(default=False)
+    music = models.BooleanField(default=False)
+    meditation = models.BooleanField(default=False)
+    puzzles = models.BooleanField(default=False)
+    gaming = models.BooleanField(default=False)
+    hiit = models.BooleanField(default=False)
+    reading = models.BooleanField(default=False)
 
-    WELLNESS_PREFS = (
-        ('yoga', 'Yoga'),
-        ('meditation', 'Meditation'),
-        ('music', 'Music'),
-        ('puzzles', 'Puzzles'),
-        ('gaming', 'Gaming'),
-        ('hiit', 'HIIT'),
-        ('reading', 'Reading'),
-    )
+    # WELLNESS_PREFS = (
+    #     ('yoga', 'Yoga'),
+    #     ('meditation', 'Meditation'),
+    #     ('music', 'Music'),
+    #     ('puzzles', 'Puzzles'),
+    #     ('gaming', 'Gaming'),
+    #     ('hiit', 'HIIT'),
+    #     ('reading', 'Reading'),
+    # )
 
-    preferences = MultiSelectField(max_length=100, choices=WELLNESS_PREFS)
+    # preferences = MultiSelectField(max_length=100, choices=WELLNESS_PREFS)
 
     def __str__(self):
         return self.user.username
