@@ -77,6 +77,25 @@ export default class Timer {
         this.updateInterfaceControls();
     }
 
+    notification(message) {
+        // check whether permission has been granted
+        if (Notification.permission === "granted") {
+            // If yes, sent notification
+            var notification = new Notification(message);
+        }
+    }
+
+    notificationPermission() {
+        if (Notification.permission !== 'denied' || Notification.permission === "default") {
+            Notification.requestPermission(function (permission) {
+                // If the user accepts, let's create a notification
+                if (permission === "granted") {
+                    var notification = new Notification("Hi there!");
+                }
+            });
+        }
+    }
+
     static getHTML() {
         return `
         <span class="timer-part timer-part-mins">00</span>
