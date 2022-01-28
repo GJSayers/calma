@@ -3,6 +3,7 @@ export default class Timer {
         root.innerHTML = Timer.getHTML();
 
         this.el = {
+            timerButtons: root.querySelectorAll(".timer-btn-set"),
             mins: root.querySelector(".timer-part-mins"),
             secs: root.querySelector(".timer-part-secs"),
             control: root.querySelector(".timer-btn-control"),
@@ -19,6 +20,18 @@ export default class Timer {
 
         this.updateInterfaceControls();
 
+        // Add event listener to buttons for setting timer
+        this.el.timerButtons.forEach( item => {
+            item.addEventListener("click", event => {
+                this.stop();
+                this.remainingSeconds = event.target.innerHTML * 60;
+                console.log(event.target.innerHTML);
+                this.updateInterfaceTime();
+            })
+        })
+        
+
+        // Event listener to start timer
         this.el.control.addEventListener("click", () => {
             if (this.interval === null) {
                 this.start();
@@ -29,7 +42,7 @@ export default class Timer {
 
         this.el.reset.addEventListener("click", () => {
             const inputMinutes = prompt("How many minutes? (Max 1 Hour)")
-
+ 
             if (inputMinutes < 61) {
                 this.stop();
                 this.remainingSeconds = inputMinutes * 60;
@@ -100,7 +113,7 @@ export default class Timer {
             Notification.requestPermission(function (permission) {
                 // If the user accepts, let's create a notification
                 if (permission === "granted") {
-                    var notification = new Notification("Hi there!");
+                    var notification = new Notification("You'll receive timer notifications");
                 }
             });
         }
@@ -109,7 +122,10 @@ export default class Timer {
     // Return HTML
     static getHTML() {
         return `
-        
+        <button type="button" class="timer-btn-set" id="btn-10">10</button>
+        <button type="button" class="timer-btn-set" id="btn-25">25</button>
+        <button type="button" class="timer-btn-set" id="btn-35">35</button>
+        <br>
         <span class="timer-part timer-part-mins">00</span>
         <span class="timer-part">:</span>
         <span class="timer-part timer-part-secs">00</span>
