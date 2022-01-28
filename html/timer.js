@@ -9,8 +9,9 @@ export default class Timer {
             reset: root.querySelector(".timer-btn-reset")
         };
 
-        this.interval = 40;
+        this.interval = null;
         this.remainingSeconds = 90;
+
 
         this.updateInterfaceControls();
 
@@ -41,6 +42,29 @@ export default class Timer {
             this.el.control.classList.add("timer-btn-stop");
             this.el.control.classList.remove("timer-btn-start");
         }
+    }
+
+    start() {
+        if (this.remainingSeconds === 0) return;
+
+        this.interval = setInterval(() => {
+            this.remainingSeconds--;
+            this.updateInterfaceTime();
+
+            if (this.remainingSeconds === 0) {
+                this.stop();
+            }
+        }, 1000);
+
+        this.updateInterfaceControls();
+    }
+
+    stop() {
+        clearInterval(this.interval);
+
+        this.interval = null;
+
+        this.updateInterfaceControls();
     }
 
     static getHTML() {
