@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'dashboard/css/home.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'dashboard/css/home.css' %}"> -->
 
     <link
       rel="stylesheet"
@@ -27,7 +27,7 @@
       href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
     <title>Calma</title>
   </head>
   <body>
@@ -1564,7 +1564,7 @@ if (this.checked) {
 </script>
 </html>
 
-
+{% include 'dashboard/includes/dock.html' %}
 {% include 'dashboard/includes/timer_modal.html' %}
 {% include 'dashboard/includes/video_modal.html' %}
 {% include 'dashboard/includes/message_self_modal.html' %}
