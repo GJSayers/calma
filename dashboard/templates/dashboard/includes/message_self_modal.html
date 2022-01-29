@@ -1,0 +1,18 @@
+{% load crispy_forms_tags %}
+
+<div class="message-self">
+
+    <form action="{% url 'message_self' %}" method="POST" class="message-self-form" id="message-self-form">
+        {% csrf_token %}
+        <div class="col-6" style="color: black;">
+            {{ form|crispy }}
+        </div>
+        
+        <button id="submit-message" class="btn">
+            <span class="font-weight-bold">Send</span>
+            <span class="icon">
+                <i class="fas fa-lock"></i>
+            </span>
+        </button>
+    </form>
+</div>
