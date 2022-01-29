@@ -183,7 +183,7 @@ opacity: 1;
 /*Night Clouds*/
 #night-clouds {
     position: absolute;
-    height: 300px;
+    max-width: 90%;
     transform: translateX(-500px);
     top: 10%;
     opacity: 0.7;
@@ -196,8 +196,8 @@ opacity: 1;
   /*Day Mode*/
   /*Day Clouds*/
   .day-clouds {
-    position: absolute;
-    height: 300px;
+    position: absolute;   
+    max-width: 90%;
     transform: translateX(-2000px);
     top: 10%;
     opacity: .8;
@@ -209,7 +209,6 @@ opacity: 1;
 
   @keyframes cloud-anim {
     to {
-      top: 10%;
       transform: translateX(2000px);
     }
   }
@@ -262,7 +261,7 @@ a {
 #dock-wrapper {
     position: fixed;
     width: 95%;
-    top: 50%;
+    top: 62%;
     left: 50%;
 }
 
@@ -280,6 +279,15 @@ a {
 
 #dock svg {
     padding: 2rem;
+}
+
+@media only screen and (min-width: 480px) {
+    #dock-wrapper {
+        position: fixed;
+        width: 95%;
+        top: 50%;
+        left: 50%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -306,3 +314,45 @@ a {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+/* Modals */
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+  }
+  
+  .bg-active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .dock-modal {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
