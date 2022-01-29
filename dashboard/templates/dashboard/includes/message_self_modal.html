@@ -1,0 +1,8 @@
+<div>
+    <form action="{% url 'message_self' %}" method="POST" class="mt-3" id="preferences-form" aria-label="update profile details form">
+        {% csrf_token %}
+        
+        <button class="btn btn-affirmative float-right" aria-label="submit updated details"><i class="fas fa-user-edit"></i> Save
+            Messaage</button>
+    </form>
+</div>
