@@ -11,7 +11,7 @@ export default class Timer {
         };
 
         this.interval = null;
-        this.remainingSeconds = 600;
+        this.remainingSeconds = 100;
 
         this.updateInterfaceControls();
         this.updateInterfaceTime();
@@ -118,7 +118,7 @@ export default class Timer {
         <i class="bi bi-play-fill"></i>
         </button>
         <audio id="sound-effect">
-        <source src="assets/sounds/sound-effect.mp3">
+        <source src="{{ MEDIA_URL }}sound-effect.mp3">
         </audio>
         `;
     }
