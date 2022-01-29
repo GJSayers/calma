@@ -1,0 +1,26 @@
+{% load crispy_forms_tags %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div id="currentMindfulCheckResults"></div>
+      <form method="POST" class="uniForm">
+        {% csrf_token %} {{ form }}
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const currentMindfulCheckResults = document.getElementById(
+    'currentMindfulCheckResults'
+  );
+  const mindfulScales = document.querySelectorAll('.mindfulScale');
+
+  mindfulScales.forEach((mindfulScale) => {
+    mindfulScale.addEventListener('change', () => {
+      currentMindfulCheckResults.innerHTML = `Here ${mindfulScales.value}`;
+    });
+  });
+</script>
