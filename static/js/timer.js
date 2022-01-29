@@ -40,19 +40,26 @@ export default class Timer {
 
     }
 
-    updateInterfaceTime() {
+    // Returns mins, secs as array
+    getTimeAsString() {
         const minutes = Math.floor(this.remainingSeconds / 60);
         const seconds = this.remainingSeconds % 60;
-        let padMins = minutes.toString().padStart(2, "0");
-        let padSecs = seconds.toString().padStart(2, "0");
-        this.el.mins.textContent = padMins;
-        this.el.secs.textContent = padSecs;
-        this.updateDocumentTitle(padMins, padSecs);
+        const padMins = minutes.toString().padStart(2, "0");
+        const padSecs = seconds.toString().padStart(2, "0");
+        return [padMins, padSecs];
     }
 
-// Updates the document title while the timer is running
-    updateDocumentTitle(mins, secs) {
+    // Updates the time display
+    updateInterfaceTime() {
+        const [mins, secs] = this.getTimeAsString();
+        this.el.mins.textContent = mins;
+        this.el.secs.textContent = secs;
+    }
+
+    // Updates the document title while the timer is running
+    updateDocumentTitle() {
         if (this.remainingSeconds > 1) {
+            const [mins, secs] = this.getTimeAsString();
             document.title = `${mins}:${secs} — Calma`;
         } else {
             document.title = "Calma";
