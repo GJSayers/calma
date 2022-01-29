@@ -27,20 +27,18 @@
   };
   Object.entries(mindResults).forEach((mindResult) => {
     currentMindfulCheckResults.innerHTML += `
-        
-                <div class="
-                    w-100
-                    border border-1
-                    rounded
-                    d-flex
-                    align-items-center
-                    justify-content-center
-                    "
-                    style="height: 100px; background-color: #f5f5f5"
-                >
-                <p class="m-0">${mindResult[0]}: ${mindResult[1]}</p>
-                </div>
-
+        <div class="
+            w-100
+            border border-1
+            rounded
+            d-flex
+            align-items-center
+            justify-content-center
+            "
+            style="height: 100px; background-color: #f5f5f5; font-size: 24px;"
+        >
+            <p class="m-0">${mindResult[0]}: ${mindResult[1]}</p>
+        </div>
     `;
   });
 
@@ -55,18 +53,18 @@
       currentMindfulCheckResults.innerHTML = '';
       Object.entries(mindResults).forEach((mindResult) => {
         currentMindfulCheckResults.innerHTML += `
-        <div class="
-        w-100
-        border border-1
-        rounded
-        d-flex
-        align-items-center
-        justify-content-center
-        "
-        style="height: 100px; background-color: #f5f5f5"
-    >
-    <p class="m-0">${mindResult[0]}: ${mindResult[1]}</p>
-    </div>
+            <div class="
+                w-100
+                border border-1
+                rounded
+                d-flex
+                align-items-center
+                justify-content-center
+                "
+                style="height: 100px; background-color: #f5f5f5; font-size: 24px;"
+            >
+                <p class="m-0">${mindResult[0]}: ${mindResult[1]}</p>
+            </div>
           `;
       });
     });
