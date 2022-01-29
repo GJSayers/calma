@@ -54,12 +54,14 @@ export default class Timer {
         const [mins, secs] = this.getTimeAsString();
         this.el.mins.textContent = mins;
         this.el.secs.textContent = secs;
+        if (this.interval !== null) {
+            this.updateDocumentTitle(mins, secs);
+        }
     }
 
     // Updates the document title while the timer is running
-    updateDocumentTitle() {
+    updateDocumentTitle(mins, secs) {
         if (this.remainingSeconds > 1) {
-            const [mins, secs] = this.getTimeAsString();
             document.title = `${mins}:${secs} — Calma`;
         } else {
             document.title = "Calma";
