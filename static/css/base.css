@@ -181,30 +181,35 @@ opacity: 1;
 }
 
 /*Night Clouds*/
-#all-clouds {
-position: absolute;
-top: 0%;
-transform: translateX(100%);
-animation: cloud-anim 30s linear infinite;
-pointer-events: none;
-cursor: none;
-visibility: var(--nightcloud);
-}
+#night-clouds {
+    position: absolute;
+    top: 10%;
+    right: 120%;
+    height: 300px;
+    opacity: 0.7;
+    animation: cloud-anim 30s linear infinite;
+    pointer-events: none;
+    cursor: none;
+    visibility: var(--nightcloud);
+  }
+  
+  /*Day Mode*/
+  /*Day Clouds*/
+  .day-clouds {
+    position: absolute;
+    top: 10%;
+    opacity: .8;
+    right: 120%;
+    height: 300px;
+    animation: cloud-anim 30s linear infinite;
+    pointer-events: none;
+    cursor: none;
+    visibility: var(--daycloud);
+  }
 
-/*Day Mode*/
-/*Day Clouds*/
-.day-clouds {
-position: absolute;
-top: 0%;
-transform: translateX(100%);
-animation: cloud-anim 30s linear infinite;
-pointer-events: none;
-cursor: none;
-visibility: var(--daycloud);
-}
-
-@keyframes cloud-anim {
-to {
-transform: translateX(-100%);
-}
-}
+  @keyframes cloud-anim {
+    to {
+      top: 10%;
+      right: -220%;
+    }
+  }
