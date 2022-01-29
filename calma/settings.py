@@ -19,7 +19,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HOST'), 'localhost©']
+ALLOWED_HOSTS = [os.environ.get('HOST'), 'localhost']
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-gjsayers-calma-zxor4j3yfk9.ws-eu29.gitpod.io','https://*.127.0.0.1']
+
+
 
 
 # Application definition
@@ -36,8 +40,14 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dashboard',
+    'crispy_forms',
+    'crispy_bootstrap5',
 
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'calma.urls'
 
@@ -67,6 +79,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
