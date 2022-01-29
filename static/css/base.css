@@ -338,16 +338,34 @@ a {
   }
   
   .dock-modal {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Comfortaa", sans-serif;
     background-color: white;
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     position: relative;
   }
+
+  .timer-container, .break-container, .check-in-container, .note-container{
+      visibility: hidden;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+  }
+  .timer-container-active, .break-container-active, .check-in-container-active, .note-container-active{
+      visibility: visible;
+      opacity: 1;
+  }
+
+  @media only screen and (min-width: 480px) {
+    .dock-modal {
+        width: 60%;
+        height: 50%;
+      }
+}
   
   .modal-close {
     position: absolute;

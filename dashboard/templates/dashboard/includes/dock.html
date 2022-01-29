@@ -23,7 +23,7 @@
                 <path
                     d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
             </svg>
-            <a href="#">
+            <a href="#" id="break-modal-btn">
                 <h2>Take a Break</h2>
             </a>
         </div>
@@ -35,7 +35,7 @@
                 <path fill-rule="evenodd"
                     d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
             </svg>
-            <a href="#">
+            <a href="#" id="check-in-modal-btn">
                 <h2>Check In</h2>
             </a>
         </div>
@@ -47,7 +47,7 @@
                 <path
                     d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
             </svg>
-            <a href="#">
+            <a href="#" id="note-modal-btn">
                 <h2>Note to Self</h2>
             </a>
         </div>
@@ -56,8 +56,20 @@
 
 <div class="modal-bg">
     <div class="dock-modal" id="timer-modal">
-        <div class="timer">
-        </div> 
+        <div class="timer-container">
+            <div class="timer">
+            </div> 
+        </div>
+        <div class="break-container">
+            <h2>Break</h2>
+        </div>
+        <div class="check-in-container">
+            <h2>Check In</h2>
+        </div>
+        <div class="check-in-container">
+            <h2>Note</h2>
+        </div>
+        
       <span class="modal-close">X</span>
     </div>
   </div>
