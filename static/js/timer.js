@@ -73,12 +73,12 @@ export default class Timer {
     updateInterfaceControls() {
         if (this.interval === null) {
             this.el.control.innerHTML = `<i class="bi bi-play-fill"></i>`;
-            this.el.control.classList.add("timer-btn-start");
-            this.el.control.classList.remove("timer-btn-stop");
+            this.el.control.classList.add("btn-success");
+            this.el.control.classList.remove("btn-danger");
         } else {
             this.el.control.innerHTML = `<i class="bi bi-pause-fill"></i>`;
-            this.el.control.classList.add("timer-btn-stop");
-            this.el.control.classList.remove("timer-btn-start");
+            this.el.control.classList.add("btn-danger");
+            this.el.control.classList.remove("btn-success");
         }
     }
 
@@ -126,16 +126,16 @@ export default class Timer {
     // Return HTML
     static getHTML() {
         return `
-        <button type="button" class="timer-btn-set">5</button>
-        <button type="button" class="timer-btn-set">10</button>
-        <button type="button" class="timer-btn-set">25</button>
+        <button type="button" class="btn btn-lg btn-secondary timer-btn-set">5</button>
+        <button type="button" class="btn btn-lg btn-secondary timer-btn-set">10</button>
+        <button type="button" class="btn btn-lg btn-secondary timer-btn-set">25</button>
         <br>
         <span class="timer-part timer-part-mins">00</span>
         <span class="timer-part">:</span>
         <span class="timer-part timer-part-secs">00</span>
         <br>
 <br>
-        <button type="button" class="timer-btn timer-btn-control timer-btn-start">
+        <button type="button" class="btn btn-lg timer-btn timer-btn-control">
         <i class="bi bi-play-fill"></i>
         </button>
         <audio id="sound-effect">
