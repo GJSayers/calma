@@ -1,108 +1,190 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Calma
 
-Welcome GJSayers,
+### [Live Site](#)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### [GitHub](https://github.com/GJSayers/calma)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Calma is a mindful dashboard allowing users to take time out of their days to check in on their wellbeing and destress.
 
 ---
 
-Happy coding!
+## Table of Contents
+
+**<details><summary>Project overview</summary>**
+
+- [**_Project overview_**](#project-overview)
+- [**_User Stories_**](#user-stories)
+</details>
+
+**<details><summary>UX</summary>**
+
+- [_Color Scheme_](#color-scheme)
+- [_Typography_](#typography)
+- [_Media_](#Media)
+- [_Wireframes_](#wireframes)
+</details>
+
+**<details><summary>Features</summary>**
+
+- [**_Existing Features_**](#existing-features)
+- [**_Features Left to Implement_**](#features-left-to-implement)
+</details>
+
+**<details><summary>Technologies Used</summary>**
+
+- [**_Libraries_**](#libraries)
+- [**_Version Control_**](#version-control)
+</details>
+
+**<details><summary>Testing</summary>**
+
+- [**_Testing_**](#testing)
+- [**_Lighthouse_**](#lighthouse)
+</details>
+
+**<details><summary>Deployment</summary>**
+
+- [**Deployment**](#deployment)
+</details>
+
+**<details><summary>Credits</summary>**
+
+- [**_Content_**](#content)
+- [**_Acknowledgements_**](#acknowledgements)
+</details>
+
+---
+
+# Project Overview
+
+![AmIResponsive](#)
+
+---
+
+### User Stories
+
+- User Story A: As a User, I wanted to be able to set a timer to set aside time to take a break <br />
+
+## Opportunities arising from user stories:
+
+<div align="center">
+ 
+|Opportunities | Importance | Viability / Feasibility
+|-----|:------:|:-----:|
+|**Simple Clean UI** | 5 | 5 |
+|**Clearly indicate purpose** | 5 | 5 |
+|**Clear Simple Instructions** | 5 | 5 |
+
+</div>
+
+---
+
+#### Design
+
+A standard layout that is fully responsive on mobile devices and larger screens.
+
+#### Color Scheme
+
+![Color Palette](static/images/rgb-readme-1.png)
+
+#### Typography
+
+We choose [Comfortaa](https://fonts.google.com/specimen/Comfortaa?query=comfortaa) because it has a relaxed feel and rounded aesthetic. <br />
+
+#### Media
+
+![AmIResponsive](static/images/paddy-wink.png)
+
+Background images were created by the team using [Affinity Designer](https://affinity.serif.com/en-us/) and animated using CSS3.
+
+#### Wireframes
+
+![AmIResponsive](#)
+
+We made our wireframe with paper and pen as time was a constraint.
+
+##### back to [top](#table-of-contents)
+
+---
+
+# Features
+
+## Existing Features
+
+#### Navbar
+
+- The navigation bar features an animated header and checkbox allowing the user to toggle between dark and light modes.
+
+#### Body
+
+- Pomodoro Timer to set to remind to eg do yoga, drink water, get away from the desk etc.
+- Fitness/ activity section with links to videos / guided meditation / potentially games
+- How am I section with sliders for the main pillars of wellbeing ( mental, social, physical, financial
+  etc). These could potentially be shared / submitted.
+- Message to self section where the user can populate a DB with encouraging messages to pop up onto their screen at future intervals ( could initially be populated with some classic quotes.
+
+#### Footer
+
+The footer features:
+
+##### back to [top](#table-of-contents)
+
+# Technologies Used
+
+#### 1. Languages
+
+[HTML 5](https://en.wikipedia.org/wiki/HTML5)
+
+[CSS 3](https://en.wikipedia.org/wiki/CSS)
+
+[Java Script](https://en.wikipedia.org/wiki/JavaScript)
+
+#### 2.Integration
+
+[Bootstrap](https://getbootstrap.com/)
+
+[Google Fonts](https://fonts.google.com/)
+
+#### 3. Workspace, version control and Repository storage
+
+[GIT](https://git-scm.com/)
+
+[Github](https://github.com/)
+
+[Heroku](https://www.heroku.com/)
+
+# Resources
+
+[Code Institute](https://codeinstitute.net/) Course Content <br />
+Code Institute SLACK Community <br />
+[Youtube](https://www.youtube.com/) - General resource. <br />
+[Am I Responsive](http://ami.responsivedesign.is/) - Responsive website mockup image generator.
+
+---
+
+# Testing
+
+- Tested... <br />
+
+#### Lighthouse
+
+Performance, Accessibility, Best Practices & SEO were tested using Google Lighthouse.
+
+## ![Lighthouse](static/wireframes/ask-paddy-testing.JPG)
+
+---
+
+# Credits
+
+### Content
+
+### Acknowledgements
+
+1.  We would like to thank our Mentor Megan Wood for her help on this project. <br />
+2.  Thank all of our Team Members for their efforts on building this project.<br />
+
+---
+
+This project is for educational use only
+
+##### back to [top](#table-of-contents)
