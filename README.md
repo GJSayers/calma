@@ -100,6 +100,10 @@ Background images were created by the team using [Affinity Designer](https://aff
 #### Wireframes
 
 ![AmIResponsive](#)
+![mockup1](https://user-images.githubusercontent.com/69420622/151669049-1da3ff43-4330-4e9c-a32f-6e88895102b5.jpg)
+![mockup2](https://user-images.githubusercontent.com/69420622/151669050-1c7b3af8-194c-4458-86e0-f2d7d958062e.jpg)
+![mockup3](https://user-images.githubusercontent.com/69420622/151669052-9d26f8ae-2190-4da9-aec9-2bb5a683a718.png)
+
 
 We made our wireframe with paper and pen as time was a constraint.
 
@@ -160,6 +164,7 @@ Code Institute SLACK Community <br />
 [Youtube](https://www.youtube.com/) - General resource. <br />
 [Am I Responsive](http://ami.responsivedesign.is/) - Responsive website mockup image generator.
 
+
 ---
 
 # Testing
@@ -182,7 +187,7 @@ Performance, Accessibility, Best Practices & SEO were tested using Google Lighth
 
 1.  We would like to thank our Mentor Megan Wood for her help on this project. <br />
 2.  Thank all of our Team Members for their efforts on building this project.<br />
-
+3. Sound effects obtained from [Zapsplat](https://www.zapsplat.com)
 ---
 
 This project is for educational use only
