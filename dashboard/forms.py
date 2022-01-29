@@ -8,14 +8,14 @@ class WellnessCheckForm(forms.ModelForm):
         model = MindfulCheck
         fields = ['purpose', 'emotional', 'financial', 'physical', 'social', 'community', 'career', 'overall']
         widgets = {
-            'purpose': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'purposeValue','class': 'mindfulScale'}),
-            'emotional': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'emotionalValue','class': 'mindfulScale'}),
-            'financial': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'financialValue','class': 'mindfulScale'}),
-            'physical': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'physicalValue','class': 'mindfulScale'}),
-            'social': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'socialValue','class': 'mindfulScale'}),
-            'community': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'communityValue','class': 'mindfulScale'}),
-            'career': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'careerValue','class': 'mindfulScale'}),
-            'overall': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'overallValue','class': 'mindfulScale'}),
+            'purpose': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Purpose','class': 'mindfulScale'}),
+            'emotional': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Emotional','class': 'mindfulScale'}),
+            'financial': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Financial','class': 'mindfulScale'}),
+            'physical': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Physical','class': 'mindfulScale'}),
+            'social': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Social','class': 'mindfulScale'}),
+            'community': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Community','class': 'mindfulScale'}),
+            'career': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Career','class': 'mindfulScale'}),
+            'overall': forms.TextInput(attrs={'type': 'range', 'min': '0', 'max': '100', 'id': 'Overall','class': 'mindfulScale'}),
         }
 
     # purpose_range = forms.IntegerField(

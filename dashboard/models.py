@@ -29,15 +29,15 @@ class UserPreferences(models.Model):
 class MindfulCheck(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     check_date = models.DateTimeField(auto_now_add=True)
-    purpose = models.IntegerField(null=False, default=4)
-    emotional = models.IntegerField(null=False, default=4)
-    financial = models.IntegerField(null=False, default=4)
-    physical = models.IntegerField(null=False, default=4)
-    social = models.IntegerField(null=False, default=4)
-    community = models.IntegerField(null=False, default=4)
-    career = models.IntegerField(null=False, default=4)
+    purpose = models.IntegerField(null=False, default=0)
+    emotional = models.IntegerField(null=False, default=0)
+    financial = models.IntegerField(null=False, default=0)
+    physical = models.IntegerField(null=False, default=0)
+    social = models.IntegerField(null=False, default=0)
+    community = models.IntegerField(null=False, default=0)
+    career = models.IntegerField(null=False, default=0)
     overall = models.DecimalField(null=True, decimal_places=2,
-                                  max_digits=4, default=0)
+                                  max_digits=5, default=0)
         
 
 
