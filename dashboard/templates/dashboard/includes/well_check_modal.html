@@ -1,33 +1,57 @@
 {% load crispy_forms_tags %}
 <div class="container">
-  <div class="row">
-    <div id="currentMindfulCheckResults" class="col-md-3"></div>
-  </div>
+  <div id="currentMindfulCheckResults" class="row"></div>
 </div>
 <form method="POST" class="uniForm">
   {% csrf_token %} {{ form }}
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Model Submit (Chart Submit Below)" />
 </form>
 
+<form action="">
+  <input id="mindfulCheckSubmit" type="submit" value="Submit" />
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <div id="pieChartContainer" style="height: 300px; width: 100%"></div>
+        <div id="lineChartContainer" style="height: 300px; width: 100%"></div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+
+<script
+  type="text/javascript"
+  src="https://canvasjs.com/assets/script/canvasjs.min.js"
+></script>
 <script>
+  const mindCheckSubmit = document.getElementById('mindfulCheckSubmit');
   const currentMindfulCheckResults = document.getElementById(
     'currentMindfulCheckResults'
   );
   const mindfulScales = document.querySelectorAll('.mindfulScale');
 
-  let mindResults = {
-    Purpose: '0',
-    Emotional: '0',
-    Financial: '0',
-    Physical: '0',
-    Social: '0',
-    Community: '0',
-    Career: '0',
-    Overall: '0',
-  };
-  Object.entries(mindResults).forEach((mindResult) => {
+  let mindResults = [
+    {
+      indexLabel: 'Purpose',
+      y: '0',
+    },
+    { indexLabel: 'Emotional', y: '0' },
+    { indexLabel: 'Financial', y: '0' },
+    { indexLabel: 'Physical', y: '0' },
+    { indexLabel: 'Social', y: '0' },
+    { indexLabel: 'Community', y: '0' },
+    { indexLabel: 'Career', y: '0' },
+    { indexLabel: 'Overall', y: '0' },
+  ];
+
+  mindResults.forEach((mindResult) => {
     currentMindfulCheckResults.innerHTML += `
         <div class="
+            col-md-3
             w-100
             border border-1
             rounded
@@ -35,23 +59,24 @@
             align-items-center
             justify-content-center
             "
-            style="height: 100px; background-color: #f5f5f5; font-size: 24px;"
+            style="height: 100px; background-color: #f5f5f5; font-size: 24px;
+            "
         >
-            <p class="m-0">${mindResult[0]}: ${mindResult[1]}</p>
+            <p class="m-0">${mindResult.indexLabel}: ${mindResult.y}</p>
         </div>
     `;
   });
 
   mindfulScales.forEach((mindfulScale) => {
     mindfulScale.addEventListener('change', () => {
-      for (let [key, value] of Object.entries(mindResults)) {
-        if (mindfulScale.id == key) {
-          mindResults[key] = mindfulScale.value;
-          console.log(mindResults);
-        }
-      }
+      //for (let [key, value] of Object.entries(mindResults)) {
+
+      //}
       currentMindfulCheckResults.innerHTML = '';
-      Object.entries(mindResults).forEach((mindResult) => {
+      mindResults.forEach((mindResult) => {
+        if (mindfulScale.id == mindResult.indexLabel) {
+          mindResult.y = mindfulScale.value;
+        }
         currentMindfulCheckResults.innerHTML += `
             <div class="
                 w-100
@@ -63,10 +88,90 @@
                 "
                 style="height: 100px; background-color: #f5f5f5; font-size: 24px;"
             >
-                <p class="m-0">${mindResult[0]}: ${mindResult[1]}</p>
+                <p class="m-0">${mindResult.indexLabel}: ${mindResult.y}</p>
             </div>
           `;
       });
     });
+  });
+
+  window.onload = function () {};
+
+  let setResult = false,
+    allAverages = [],
+    daysPassed = 1;
+  let todaysDate = new Date().getDay();
+
+  mindCheckSubmit.addEventListener('click', (e) => {
+    console.log(mindResults);
+    e.preventDefault();
+    var pieChart = new CanvasJS.Chart('pieChartContainer', {
+      title: {
+        text: 'Mindful Check',
+      },
+      legend: {
+        maxWidth: 350,
+        itemWidth: 120,
+      },
+      data: [
+        {
+          type: 'pie',
+          showInLegend: true,
+          legendText: '{indexLabel}',
+          dataPoints: mindResults,
+        },
+      ],
+    });
+    pieChart.render();
+
+    let averageRes = [];
+    console.log(mindResults);
+    let mean = mindResults.reduce(function (accumulator, currentValue) {
+      return accumulator + parseInt(currentValue.y);
+    }, 0);
+
+    console.log('mean', mean / 8);
+
+    let date = new Date(),
+      day = date.getDate(),
+      month = date.getMonth(),
+      year = date.getFullYear();
+
+    console.log(day, month + 1, year);
+    // let tempResults = { x: new Date(day, month + 1, year), y: mean / 8 };
+
+    setResult = true;
+    if (todaysDate !== new Date().getDay()) setResult = false;
+
+    if (!setResult) {
+      console.log(todaysDate, setResult);
+      daysPassed++;
+      if (daysPassed > 7) {
+        allAverages = [];
+        daysPassed = 1;
+      }
+      allAverages.push({ x: new Date(day, month + 1, year), y: mean / 8 });
+      todaysDate = new Date().getDay();
+    } else {
+      console.log(todaysDate, setResult);
+      allAverages.pop();
+      allAverages.push({ x: new Date(day, month + 1, year), y: mean / 8 });
+    }
+    console.log(allAverages);
+
+    var lineChart = new CanvasJS.Chart('lineChartContainer', {
+      title: {
+        text: 'Average Results - per week',
+      },
+      data: [
+        {
+          type: 'line',
+
+          dataPoints: allAverages,
+        },
+      ],
+    });
+
+    lineChart.render();
   });
 </script>
