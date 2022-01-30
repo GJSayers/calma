@@ -10,17 +10,22 @@ class UserPreferences(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    WELLNESS_PREFS = (
-        ('yoga', 'Yoga'),
-        ('meditation', 'Meditation'),
-        ('music', 'Music'),
-        ('puzzles', 'Puzzles'),
-        ('gaming', 'Gaming'),
-        ('hiit', 'HIIT'),
-        ('reading', 'Reading'),
-    )
+    preferences = models.CharField(
+            max_length = 255,
+            null = True,
+            blank = True )
 
-    preferences = MultiSelectField(max_length=100, choices=WELLNESS_PREFS)
+    # WELLNESS_PREFS = (
+    #     ('yoga', 'Yoga'),
+    #     ('meditation', 'Meditation'),
+    #     ('music', 'Music'),
+    #     ('puzzles', 'Puzzles'),
+    #     ('gaming', 'Gaming'),
+    #     ('hiit', 'HIIT'),
+    #     ('reading', 'Reading'),
+    # )
+
+    # preferences = MultiSelectField(max_length=100, choices=WELLNESS_PREFS)
 
     def __str__(self):
         return self.user.username

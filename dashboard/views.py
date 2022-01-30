@@ -15,6 +15,7 @@ def user_prefs(request):
     """
     Display the form for user preference selection / update
     """
+    
     return render(request, 'dashboard/index.html')
 
 

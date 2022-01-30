@@ -4,8 +4,9 @@
 
     <form action="{% url 'message_self' %}" method="POST" class="message-self-form" id="message-self-form">
         {% csrf_token %}
+        {{ message_form }}
         <div class="col-6" style="color: black;">
-            {{ message_form|crispy }}
+            
         </div>
         
         <button id="submit-message" class="btn">

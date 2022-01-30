@@ -7,9 +7,25 @@ class MessageToSelfForm(forms.ModelForm):
     """
     Form for submission of message to self
     """
+
+    WELLNESS_PREFS = (
+        ('yoga', 'Yoga'),
+        ('meditation', 'Meditation'),
+        ('music', 'Music'),
+        ('puzzles', 'Puzzles'),
+        ('gaming', 'Gaming'),
+        ('hiit', 'HIIT'),
+        ('reading', 'Reading'),
+    )
+
+    preferences = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple, choices=WELLNESS_PREFS)
+
     class Meta:
         model = Message
-        exclude = ('user',) 
+        fields = ['preferences']
+        # exclude = ('user',) 
+
+    
 
     def __init__(self, *args, **kwargs):
         """
