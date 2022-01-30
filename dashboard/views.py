@@ -26,10 +26,11 @@ def dashboard(request):
 def message_self_content(request):
     # Show individual news messages
     
-    msg = Message.objects.all()
+    messages = Message.objects.all()
+
 
     context = {
-        'message': msg
+        'messages': messages,
     }
 
     return render(request, 'dashboard/message_self_content.html', context)

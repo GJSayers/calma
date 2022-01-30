@@ -4,6 +4,8 @@
 {% block content %}
     <a href="{% url 'dashboard' %}" class="btn btn-dark btn " role="button">Back to Dashboard</a>
     <h1>LIST OF MESSAGES</h1>
-    {{message.message_text}}
+    {% for message in messages %}
+        <p>{{ message.message_text }}</p>
+    {% endfor %}
     <a href="{% url 'add_message_self' %}" class="btn btn-success btn-lg " role="button">Add a Message</a>
 {% endblock %}
