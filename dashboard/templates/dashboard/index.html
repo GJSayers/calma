@@ -18,6 +18,8 @@
         ></label>
       </div>
     </div>
+
+    <a href="{% url 'message_self' %}" class="btn btn-success btn-lg " role="button">Messages to Self</a>
  
   
   <script>
@@ -35,7 +37,7 @@ if (this.checked) {
 
 {% include 'dashboard/includes/dock.html' %}
 {% include 'dashboard/includes/video_modal.html' %}
-{% include 'dashboard/includes/message_self_modal.html' %}
+{% comment %} {% include 'dashboard/includes/message_self_modal.html' %} {% endcomment %}
 {% include 'dashboard/includes/well_check_modal.html' %}
 
 {% endblock %}
