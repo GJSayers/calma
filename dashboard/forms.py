@@ -9,8 +9,7 @@ class MessageToSelfForm(forms.ModelForm):
     """
     class Meta:
         model = Message
-        readonly_fields = 'user'
-        fields = ('message_text',)
+        exclude = ('user',) 
 
     def __init__(self, *args, **kwargs):
         """
