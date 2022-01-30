@@ -1,268 +1,286 @@
 * {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body,
 html {
-height: 100%;
-margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 /*dark/light mode color themes*/
 html[data-theme="light"] {
---bg1: #ffffff;
---panel: #a3a3a3;
---panel2: #434343;
---text1: black;
---text2: #0077ff;
---landscape: url("https://i.imgur.com/RHEgZbJ.jpg") no-repeat;
---stars: hidden;
---nightcloud: hidden;
---daycloud: visible;
+  --bg1: #ffffff;
+  --panel: #a3a3a3;
+  --panel2: #434343;
+  --text1: black;
+  --text2: #0077ff;
+  --landscape: url("https://i.imgur.com/RHEgZbJ.jpg") no-repeat;
+  --stars: hidden;
+  --nightcloud: hidden;
+  --daycloud: visible;
 }
 
 html[data-theme="dark"] {
---bg1: black;
---panel: #434343;
---panel2: #a3a3a3;
---text1: #ffffff;
---text2: #3694ff;
---landscape: url("https://i.imgur.com/I9OuZcp.jpg") no-repeat;
---stars: visible;
---daycloud: hidden;
+  --bg1: black;
+  --panel: #434343;
+  --panel2: #a3a3a3;
+  --text1: #ffffff;
+  --text2: #3694ff;
+  --landscape: url("https://i.imgur.com/I9OuZcp.jpg") no-repeat;
+  --stars: visible;
+  --daycloud: hidden;
 }
 
 body {
-background: var(--landscape);
-background-size: cover;
-position: relative;
-overflow: hidden;
+  background: var(--landscape);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
 
 /*Calma Logo*/
 #calma-header {
-padding: 1rem 2rem;
+  padding: 1rem 2rem;
 }
 
 #calma-header path:nth-child(2) {
-transform: translateX(-50px);
-opacity: 0;
-animation: head-anim 4s ease forwards 1.7s;
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: head-anim 4s ease forwards 1.7s;
 }
+
 #calma-header path:nth-child(3) {
-transform: translateX(-80px);
-opacity: 0;
-animation: head-anim 4s ease forwards 1.5s;
+  transform: translateX(-80px);
+  opacity: 0;
+  animation: head-anim 4s ease forwards 1.5s;
 }
+
 #calma-header path:nth-child(4) {
-transform: translateX(-110px);
-opacity: 0;
-animation: head-anim 4s ease forwards 1s;
+  transform: translateX(-110px);
+  opacity: 0;
+  animation: head-anim 4s ease forwards 1s;
 }
+
 #calma-header path:nth-child(5) {
-transform: translateX(-140px);
-opacity: 0;
-animation: head-anim 4s ease forwards 0.5s;
+  transform: translateX(-140px);
+  opacity: 0;
+  animation: head-anim 4s ease forwards 0.5s;
 }
 
 @keyframes head-anim {
-0% {
-fill: white;
-}
-100% {
-opacity: 1;
-transform: translateX(0);
-fill: white;
-}
+  0% {
+    fill: white;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    fill: white;
+  }
 }
 
 /*DARK TOGGLE*/
 /*toggle modified from a codepen by Marcus Burnette:https://codepen.io/mburnette/pen/LxNxNg*/
 .toggle-container {
-display: flex;
-justify-content: flex-end;
-align-items: center;
-min-height: 4vh;
-margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 4vh;
+  margin-bottom: 1rem;
 }
 
 input[type="checkbox"] {
-height: 0;
-width: 0;
-visibility: hidden;
+  height: 0;
+  width: 0;
+  visibility: hidden;
 }
 
 #darkLight {
-cursor: pointer;
-text-indent: -9999px;
-width: 52px;
-height: 27px;
-background: var(--panel);
-float: right;
-border-radius: 100px;
-position: relative;
-top: 0.5rem;
-right: 1rem;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: var(--panel);
+  float: right;
+  border-radius: 100px;
+  position: relative;
+  top: 0.5rem;
+  right: 1rem;
 }
 
 #darkLight:after {
-content: "";
-position: absolute;
-top: 3px;
-left: 3px;
-width: 20px;
-height: 20px;
-background: var(--panel2);
-border-radius: 50px;
-transition: 0.3s;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--panel2);
+  border-radius: 50px;
+  transition: 0.3s;
 }
 
-input:checked + #darkLight {
-background: yellow;
+input:checked+#darkLight {
+  background: yellow;
 }
 
-input:checked + #darkLight:after {
-left: calc(100% - 5px);
-transform: translateX(-100%);
+input:checked+#darkLight:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
 }
 
 #darkLight:active:after {
-width: 45px;
+  width: 45px;
 }
 
 .headbox {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*Night Mode*/
 /*Stars*/
 #all-stars {
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-pointer-events: none;
-cursor: none;
-visibility: var(--stars);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  cursor: none;
+  visibility: var(--stars);
 }
+
 .twinkle-star {
-opacity: 0;
-animation: twinkle 5s ease infinite;
+  opacity: 0;
+  animation: twinkle 5s ease infinite;
 }
+
 .twinkle-star2 {
-opacity: 0;
-animation: twinkle2 5s ease infinite 2s;
+  opacity: 0;
+  animation: twinkle2 5s ease infinite 2s;
 }
 
 @keyframes twinkle {
-0% {
-opacity: 1;
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
-50% {
-opacity: 0;
-}
-100% {
-opacity: 1;
-}
-}
+
 @keyframes twinkle2 {
-0% {
-opacity: 1;
-}
-50% {
-opacity: 0.3;
-}
-100% {
-opacity: 1;
-}
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /*Night Clouds*/
 #night-clouds {
-    position: absolute;
-    max-width: 90%;
-    transform: translateX(-500px);
-    top: 10%;
-    opacity: 0.7;
-    animation: cloud-anim 30s linear infinite;
-    pointer-events: none;
-    cursor: none;
-    visibility: var(--nightcloud);
-  }
-  
-  /*Day Mode*/
-  /*Day Clouds*/
-  .day-clouds {
-    position: absolute;   
-    max-width: 90%;
-    transform: translateX(-2000px);
-    top: 10%;
-    opacity: .8;
-    animation: cloud-anim 30s linear infinite;
-    pointer-events: none;
-    cursor: none;
-    visibility: var(--daycloud);
-  }
+  position: absolute;
+  max-width: 90%;
+  transform: translateX(-500px);
+  top: 10%;
+  opacity: 0.7;
+  animation: cloud-anim 30s linear infinite;
+  pointer-events: none;
+  cursor: none;
+  visibility: var(--nightcloud);
+}
 
-  @keyframes cloud-anim {
-    to {
-      transform: translateX(2000px);
-    }
-  }
+/*Day Mode*/
+/*Day Clouds*/
+.day-clouds {
+  position: absolute;
+  max-width: 90%;
+  transform: translateX(-2000px);
+  top: 10%;
+  opacity: .8;
+  animation: cloud-anim 30s linear infinite;
+  pointer-events: none;
+  cursor: none;
+  visibility: var(--daycloud);
+}
 
-/* Timer css */
-  /* fox */
-  .fox{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 100px;
-        width: 100px;
-        transform: translateY(100px);
-        animation: fox-anim 100s ease-out forwards;
-  }
-  @media only screen and (min-width: 768px) {
-    .fox{
-        height: 200px;
-        width: 200px;
-        transform: translateY(200px);
-        animation: fox-anim-l 100s ease-out forwards;
+@keyframes cloud-anim {
+  to {
+    transform: translateX(2000px);
   }
 }
-  
 
-  @keyframes fox-anim {
-    0%{
-        transform: translateY(100px);
-    }
-    5%{
-        transform: translateY(100px);
-    }
-    7% {
-        transform: translateY(0px);
-    }
-    9% {
-        transform: translateY(100px);
-    }
+/* Timer css */
+/* fox */
+.fox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  transform: translateY(100px);
+  animation: fox-anim 100s ease-out forwards;
+}
+
+@media only screen and (min-width: 768px) {
+  .fox {
+    height: 200px;
+    width: 200px;
+    transform: translateY(200px);
+    animation: fox-anim-l 100s ease-out forwards;
+  }
+}
+
+
+@keyframes fox-anim {
+  0% {
+    transform: translateY(100px);
   }
 
-  @keyframes fox-anim-l {
-    0%{
-        transform: translateY(200px);
-    }
-    5%{
-        transform: translateY(200px);
-    }
-    7% {
-        transform: translateY(0px);
-    }
-    9% {
-        transform: translateY(200px);
-    }
+  5% {
+    transform: translateY(100px);
   }
+
+  7% {
+    transform: translateY(0px);
+  }
+
+  9% {
+    transform: translateY(100px);
+  }
+}
+
+@keyframes fox-anim-l {
+  0% {
+    transform: translateY(200px);
+  }
+
+  5% {
+    transform: translateY(200px);
+  }
+
+  7% {
+    transform: translateY(0px);
+  }
+
+  9% {
+    transform: translateY(200px);
+  }
+}
 
 
 /* David's Timer css */
@@ -270,28 +288,28 @@ opacity: 1;
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
 .timer {
-   text-align: center;
+  text-align: center;
 }
 
 .timer-part {
-    font-size: 5rem;
-    font-weight: bold;
+  font-size: 5rem;
+  font-weight: bold;
 }
 
 .timer-btn {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .timer-btn-set {
-    margin: 3rem auto;
-    padding: 0.5rem 1.2rem;
-    font-size: 1.5rem;
-    display: inline-block;
+  margin: 3rem auto;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.5rem;
+  display: inline-block;
 }
 
 .timer-btn-control {
-    font-size: 3rem;
-    padding: 0.5rem 1rem;
+  font-size: 3rem;
+  padding: 0.5rem 1rem;
 }
 
 /* David's Dock css */
@@ -299,130 +317,175 @@ opacity: 1;
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
 a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 #clock {
-    font-family: "Comfortaa", sans-serif;
-    color: #fff;
-    font-size: 4rem;
-    text-align: center;
+  font-family: "Comfortaa", sans-serif;
+  color: #fff;
+  font-size: 4rem;
+  text-align: center;
 }
 
 #dock-wrapper {
-    position: fixed;
-    width: 95%;
-    top: 62%;
-    left: 50%;
+  position: fixed;
+  width: 95%;
+  top: 62%;
+  left: 50%;
 }
 
 #dock {
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: 0 auto;
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    padding: 0 2rem 2rem;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  padding: 0 2rem 2rem;
 }
 
 
 #dock svg {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 @media only screen and (min-width: 480px) {
-    #dock-wrapper {
-        position: fixed;
-        width: 95%;
-        top: 50%;
-        left: 50%;
-    }
+  #dock-wrapper {
+    position: fixed;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    #time {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 8rem;
-    }
+  #time {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+  }
 
-    #dock-wrapper {
-        width: 100vw;
-        bottom: 0px;
-        left: initial;
-        top: initial;
-    }
+  #dock-wrapper {
+    width: 100vw;
+    bottom: 0px;
+    left: initial;
+    top: initial;
+  }
 
-    #dock {
-        margin: 0 auto;
-        height: fit-content;
-        width: fit-content;
-        transform: initial;
-        grid-template-columns: repeat(4, 1fr);
-    }
+  #dock {
+    margin: 0 auto;
+    height: fit-content;
+    width: fit-content;
+    transform: initial;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Modals */
 
 .modal-bg {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s;
-  }
-  
-  .bg-active {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .dock-modal {
-    font-family: "Comfortaa", sans-serif;
-    background-color: white;
-    width: 80%;
-    height: 70%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-  }
-
-  .timer-container, .break-container, .check-in-container, .note-container{
-      visibility: hidden;
-      opacity: 0;
-      height: 100%;
-      width: 100%;
-  }
-  .timer-container-active, .break-container-active, .check-in-container-active, .note-container-active{
-      visibility: visible;
-      opacity: 1;
-  }
-
-  @media only screen and (min-width: 480px) {
-    .dock-modal {
-        width: 60%;
-        height: 50%;
-      }
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
 }
-  
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-weight: bold;
-    cursor: pointer;
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dock-modal {
+  font-family: "Comfortaa", sans-serif;
+  background-color: white;
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.timer-container,
+.break-container,
+.check-in-container,
+.note-container {
+  visibility: hidden;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.timer-container-active,
+.break-container-active,
+.check-in-container-active,
+.note-container-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media only screen and (min-width: 480px) {
+  .dock-modal {
+    width: 60%;
+    height: 50%;
   }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Login Form Styles */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-page {
+  height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;  
+}
