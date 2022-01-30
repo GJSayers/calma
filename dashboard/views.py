@@ -30,9 +30,12 @@ def dashboard(request):
 #     return render(request, 'dashboard/index.html')
 
 
-# def message_self(request):
-#     """
-#     Display the dashboard apps with the logged 
-#     """
-#     return render(request, 'dashboard/index.html')
+def message_to_self(request):
+    """
+    Handle the message to self submission
+    """
+    user = request.user
+
+
+    return redirect(reverse, 'dashboard/index.html')
 
