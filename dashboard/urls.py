@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
-    path('', views.message_to_self, name='message_to_self')
+    path('add-message/', views.message_to_self, name='message_to_self')
 ]
