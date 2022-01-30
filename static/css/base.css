@@ -213,6 +213,57 @@ opacity: 1;
     }
   }
 
+  /* fox */
+  .fox{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+        transform: translateY(100px);
+        animation: fox-anim 100s ease-out forwards;
+  }
+  @media only screen and (min-width: 768px) {
+    .fox{
+        height: 200px;
+        width: 200px;
+        transform: translateY(200px);
+        animation: fox-anim-l 100s ease-out forwards;
+  }
+}
+  
+
+  @keyframes fox-anim {
+    0%{
+        transform: translateY(100px);
+    }
+    5%{
+        transform: translateY(100px);
+    }
+    7% {
+        transform: translateY(0px);
+    }
+    9% {
+        transform: translateY(100px);
+    }
+  }
+
+  @keyframes fox-anim-l {
+    0%{
+        transform: translateY(200px);
+    }
+    5%{
+        transform: translateY(200px);
+    }
+    7% {
+        transform: translateY(0px);
+    }
+    9% {
+        transform: translateY(200px);
+    }
+  }
+
+
 /* David's Timer css */
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
