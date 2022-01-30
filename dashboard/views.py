@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -48,7 +48,7 @@ def message_to_self(request):
         form = MessageToSelfForm(instance=profile)
     form = MessageToSelfForm()
 
-    context = {'message_text_form': form}
-    template = 'dashboard/index.html'
-    return render(request, template)
+    # context = {'message_text_form': form}
+    # template = 'dashboard/index.html'
+    return redirect(reverse('dashboard'))
 
