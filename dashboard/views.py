@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from .models import UserPreferences, MindfulCheck, Message, Activities
-from .forms import MessageToSelfForm
+from .forms import MessageToSelfForm, UpdatePreferencesForm 
 
 def dashboard(request):
     """
@@ -28,11 +28,22 @@ def dashboard(request):
     return render(request, 'dashboard/index.html', context)
 
 
-# def user_prefs(request):
-#     """
-#     Display the u
-#     """
-#     return render(request, 'dashboard/index.html')
+def user_prefs(request):
+    """
+    Handle the message to self submission
+    """
+    profile = get_object_or_404(Message, user=request.user)
+    if request.method == "POST":
+        form = UpdatePreferencesForm(request.POST, instance=profile)
+        if form.is_valid():
+            form = form.save()
+    else: 
+        form = UpdatePreferencesForm(instance=profile)
+    form = UpdatePreferencesForm()
+
+    # context = {'message_text_form': form}
+    # template = 'dashboard/index.html'
+    return redirect(reverse('dashboard'))
 
 
 def message_to_self(request):

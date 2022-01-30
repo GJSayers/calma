@@ -1,0 +1,7 @@
+{% load crispy_forms_tags %}
+
+<form action="{% url 'user_prefs' %}" method="POST" class="update-prefs-form" id="update-prefs-form" aria-label="update preferences form">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-affirmative float-right" aria-label="submit preferences" id="submit-prefs" type="submit" value="Submit"><i class="fas fa-user-edit"></i> Save</button>
+</form>
