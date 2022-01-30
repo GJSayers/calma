@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserPreferences, MindfulCheck, Message
+from .models import UserPreferences, MindfulCheck, Message, Activities
 
 # Register your models here.
 class UserPreferencesAdmin(admin.ModelAdmin):
@@ -28,6 +28,15 @@ class MessageAdmin(admin.ModelAdmin):
         'message_text',
     )
 
+class ActivitiesAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'preferences',
+        'vid_length',
+        'content',
+    )
+
 admin.site.register(UserPreferences, UserPreferencesAdmin)
 admin.site.register(MindfulCheck, MindfulCheckAdmin)
 admin.site.register(Message, MessageAdmin)
+admin.site.register(Activities, ActivitiesAdmin)
