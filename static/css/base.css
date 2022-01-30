@@ -220,13 +220,12 @@ opacity: 1;
 
 
 .timer {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 5rem;
+    /* display: inline-block;
+    padding: 5rem; */
 }
 
 .timer-part {
-    font-size: 2rem;
+    font-size: 5rem;
     font-weight: bold;
 }
 
@@ -234,13 +233,13 @@ opacity: 1;
     cursor: pointer;
 }
 
-.timer-btn-start {
+/* .timer-btn-start {
     background-color: green;
 }
 
 .timer-btn-stop {
     background-color: red;
-}
+} */
 
 /* David's Dock css */
 
