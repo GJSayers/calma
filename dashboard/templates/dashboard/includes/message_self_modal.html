@@ -1,0 +1,8 @@
+{% load crispy_forms_tags %}
+
+<form action="{% url 'message_to_self' %}" method="POST" class="mt-3" id="message-self-form" aria-label="send message to self form">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-affirmative float-right" aria-label="submit updated details"><i class="fas fa-user-edit"></i> Send
+        Message</button>
+</form>

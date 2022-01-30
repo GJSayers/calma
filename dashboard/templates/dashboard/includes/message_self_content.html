@@ -1,0 +1,9 @@
+<h2>
+    {% for message in messages %}
+            
+                {% if message.user == user %}
+                    <p>{{ message.message_text }}</p>
+                {% endif %}
+        
+    {% endfor %}
+</h2>
