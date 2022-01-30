@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dashboard',
+    'multiselectfield',
     'crispy_forms',
     'crispy_bootstrap5',
 

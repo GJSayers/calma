@@ -1,9 +1,9 @@
 from django import forms
-from .models import Message
+from .models import Message, UserPreferences
 # from .widgets import RangeInput
 
 
-class MessageToSelfForm(forms.ModelForm):
+class UserPreferencesForm(forms.ModelForm):
     """
     Form for submission of message to self
     """
@@ -18,27 +18,29 @@ class MessageToSelfForm(forms.ModelForm):
         ('reading', 'Reading'),
     )
 
-    preferences = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple, choices=WELLNESS_PREFS)
+    # preferences = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple, choices=WELLNESS_PREFS)
+
+    preferences = forms.ChoiceField(choices=WELLNESS_PREFS, widget=forms.RadioSelect(), required=False)
 
     class Meta:
-        model = Message
+        model = UserPreferences
         fields = ['preferences']
+
+# class MessageToSelfForm(forms.ModelForm):
+    # class Meta:
+    #     model = Message
+    #     fields = ['message_text']
         # exclude = ('user',) 
 
     
 
-    def __init__(self, *args, **kwargs):
-        """
-        Add placeholde for text box
-        """
-        super().__init__(*args, **kwargs)
-        placeholders = {
-            'message_text': 'Leave a positive message for your future self!',
-        }
+    # def __init__(self, *args, **kwargs):
+    #     """
+    #     Add placeholde for text box
+    #     """
+    #     super().__init__(*args, **kwargs)
+    #     placeholders = {
+    #         'message_text': 'Leave a positive message for your future self!',
+    #     }
 
-        self.fields['message_text'].widget.attrs['placeholder'] = placeholders
-        
-
-
-            
-
+    #     self.fields['message_text'].widget.attrs['placeholder'] = placeholders

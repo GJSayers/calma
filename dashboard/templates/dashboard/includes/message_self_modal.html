@@ -3,8 +3,7 @@
 <div class="message-self">
 
     <form action="{% url 'message_self' %}" method="POST" class="message-self-form" id="message-self-form">
-        {% csrf_token %}
-        {{ message_form }}
+        {% crispy form %}
         <div class="col-6" style="color: black;">
             
         </div>
