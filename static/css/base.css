@@ -182,36 +182,49 @@ opacity: 1;
 
 /*Night Clouds*/
 #night-clouds {
-    position: absolute;
-    max-width: 90%;
-    transform: translateX(-500px);
-    top: 10%;
-    opacity: 0.7;
-    animation: cloud-anim 30s linear infinite;
-    pointer-events: none;
-    cursor: none;
-    visibility: var(--nightcloud);
-  }
-  
-  /*Day Mode*/
-  /*Day Clouds*/
-  .day-clouds {
-    position: absolute;   
-    max-width: 90%;
-    transform: translateX(-2000px);
-    top: 10%;
-    opacity: .8;
-    animation: cloud-anim 30s linear infinite;
-    pointer-events: none;
-    cursor: none;
-    visibility: var(--daycloud);
-  }
+  position: absolute;
+  top: 10%;
+  opacity: 0.2;
+  animation: cloud-1-anim 10s linear infinite alternate;
+  pointer-events: none;
+  cursor: none;
+  visibility: var(--nightcloud);
+}
 
-  @keyframes cloud-anim {
-    to {
-      transform: translateX(2000px);
-    }
+/*Day Mode*/
+/*Day Clouds*/
+.day-clouds {
+  position: absolute;
+  top: 10%;
+  opacity: 0.8;
+  pointer-events: none;
+  cursor: none;
+  visibility: var(--daycloud);
+}
+
+#cloud1 {
+  animation: cloud-1-anim 10s linear infinite alternate;
+}
+
+#cloud2 {
+  animation: cloud-1-anim 10s linear infinite alternate;
+}
+
+#cloud3 {
+  animation: cloud-1-anim 10s infinite alternate;
+}
+
+@keyframes cloud-1-anim {
+  to {
+    transform: translateY(50px);
   }
+}
+
+@keyframes cloud-anim {
+  to {
+    transform: translateX(2000px);
+  }
+}
 
 /* Timer css */
   /* fox */
@@ -238,13 +251,13 @@ opacity: 1;
     0%{
         transform: translateY(100px);
     }
-    5%{
+    3%{
         transform: translateY(100px);
     }
-    7% {
+    4% {
         transform: translateY(0px);
     }
-    9% {
+    4.5% {
         transform: translateY(100px);
     }
   }
@@ -253,13 +266,13 @@ opacity: 1;
     0%{
         transform: translateY(200px);
     }
-    5%{
+    3%{
         transform: translateY(200px);
     }
-    7% {
+    4% {
         transform: translateY(0px);
     }
-    9% {
+    4.5% {
         transform: translateY(200px);
     }
   }
