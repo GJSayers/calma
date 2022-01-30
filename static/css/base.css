@@ -444,6 +444,7 @@ a {
   }
 }
 
+
 .modal-close {
   position: absolute;
   top: 10px;
@@ -451,6 +452,17 @@ a {
   font-weight: bold;
   cursor: pointer;
 }
+
+  .timer-container, .break-container, .check-in-container, .note-container{
+      display: none;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+  }
+  .timer-container-active, .break-container-active, .check-in-container-active, .note-container-active{
+      display: block;
+      opacity: 1;
+  }
 
 /* Login Form Styles */
 
