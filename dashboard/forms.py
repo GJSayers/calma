@@ -20,7 +20,7 @@ class UserPreferencesForm(forms.ModelForm):
 
     # preferences = forms.MultipleChoiceField(widget = forms.CheckboxSelectMultiple, choices=WELLNESS_PREFS)
 
-    preferences = forms.ChoiceField(choices=WELLNESS_PREFS, widget=forms.RadioSelect(), required=False)
+    preferences = forms.MultipleChoiceField(choices=WELLNESS_PREFS, widget=forms.RadioSelect(), required=False)
 
     class Meta:
         model = UserPreferences

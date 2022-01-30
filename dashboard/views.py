@@ -9,7 +9,7 @@ from .forms import UserPreferencesForm
 def dashboard(request):
     context = {'form': UserPreferencesForm()}
 
-    return render(request, 'dashboard/index.html', )
+    return render(request, 'dashboard/index.html', context)
 
 
 def user_prefs(request):
