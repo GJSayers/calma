@@ -21,7 +21,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('HOST'), 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-gjsayers-calma-zxor4j3yfk9.ws-eu29.gitpod.io','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://8000-gjsayers-calma-zxor4j3yfk9.ws-eu29.gitpod.io', 'https://*.127.0.0.1']
 
 
 # Application definition
