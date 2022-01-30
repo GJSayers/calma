@@ -26,10 +26,12 @@ class UserPreferencesForm(forms.ModelForm):
         model = UserPreferences
         fields = ['preferences']
 
-# class MessageToSelfForm(forms.ModelForm):
-    # class Meta:
-    #     model = Message
-    #     fields = ['message_text']
+class MessageToSelfForm(forms.ModelForm):
+    message_text = forms.CharField(max_length=255, required=False)
+
+    class Meta:
+        model = Message
+        fields = ['message_text']
         # exclude = ('user',) 
 
     

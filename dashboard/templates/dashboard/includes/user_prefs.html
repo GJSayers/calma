@@ -1,0 +1,18 @@
+{% load crispy_forms_tags %}
+
+<div class="user-prefs">
+
+    <form action="{% url 'user-prefs' %}" method="POST" class="user-prefs-form" id="user-prefs-form">
+        {% crispy form %}
+        <div class="col-6" style="color: black;">
+            
+        </div>
+        
+        <button id="submit-message" class="btn">
+            <span class="font-weight-bold">Send</span>
+            <span class="icon">
+                <i class="fas fa-lock"></i>
+            </span>
+        </button>
+    </form>
+</div>
