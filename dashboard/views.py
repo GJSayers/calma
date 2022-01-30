@@ -1,17 +1,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 
-from .models import UserPreferences, MindfulCheck, Message, Activitites
+from .models import UserPreferences, MindfulCheck, Message, Activities
 
 def dashboard(request):
     """
     Display the dashboard apps 
     """
-    activities = Activities.objects.get()
+    activities = Activities.objects.all()
     print('activities')
-    
+
     context = {
         'activities': activities,
+  
     }
 
     return render(request, 'dashboard/index.html', context)
