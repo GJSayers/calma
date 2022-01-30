@@ -402,13 +402,13 @@ a {
   }
 
   .timer-container, .break-container, .check-in-container, .note-container{
-      visibility: hidden;
+      display: none;
       opacity: 0;
       height: 100%;
       width: 100%;
   }
   .timer-container-active, .break-container-active, .check-in-container-active, .note-container-active{
-      visibility: visible;
+      display: block;
       opacity: 1;
   }
 
