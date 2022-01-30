@@ -9,10 +9,15 @@ def dashboard(request):
     """
     activities = Activities.objects.all()
     print('activities')
+    messages = Message.objects.all()
+    user = request.user
+    print ('requestuser', user)
+    
 
     context = {
         'activities': activities,
-  
+        'messages': messages,
+        'user': user,
     }
 
     return render(request, 'dashboard/index.html', context)
