@@ -442,6 +442,10 @@ a {
     width: 60%;
     height: 50%;
   }
+  #clock {
+    font-size: 7rem;
+    margin: 10vh;
+  }
 }
 
 
