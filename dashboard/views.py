@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from .models import UserPreferences, Message
 from .forms import MessageToSelfForm
 
+def dashboard(request):
+
+    return render(request, 'dashboard/index.html')
+
 
 def user_prefs(request):
     """
@@ -16,11 +20,14 @@ def message_self(request):
     """
     Display the form & handle submission for messages to future self
     """
-    user = session.user
-    message_form = MessageToSelfForm()
+    user = User.objects.get(user=request.user)
+    form_data = {
+        'user': user,
+        'message_text': request.POST['message_text']
+    }
     if request.method == "POST":
         print(request.POST)
-        message_form = MessageToSelfForm(request.POST)
+        message_form = MessageToSelfForm(form_data)
         if message_form.is_valid():
             message_form.save()
         return redirect(reverse('dashboard/index.html'))   
