@@ -14,7 +14,7 @@ class MessageToSelfForm(forms.ModelForm):
 
 
 class UpdatePreferencesForm(forms.ModelForm):
-    preferences = MultipleChoiceField(choices=(
+    WELLNESS_PREFS = [
         ('yoga', 'Yoga'),
         ('meditation', 'Meditation'),
         ('music', 'Music'),
@@ -22,8 +22,8 @@ class UpdatePreferencesForm(forms.ModelForm):
         ('gaming', 'Gaming'),
         ('hiit', 'HIIT'),
         ('reading', 'Reading'),
-    ),
-        initial='yoga', widget=CheckboxSelectMultiple)
+    ]
+    preferences = MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=WELLNESS_PREFS)
 
     class Meta:
         model = UserPreferences

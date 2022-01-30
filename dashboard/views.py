@@ -15,14 +15,16 @@ def dashboard(request):
     messages = Message.objects.all()
     user = request.user
     print ('requestuser', user)
-    form = MessageToSelfForm()
+    message_form = MessageToSelfForm()
+    prefs_form = UpdatePreferencesForm()
     
 
     context = {
         'activities': activities,
         'messages': messages,
         'user': user,
-        'form': form,
+        'message_form': message_form,
+        'prefs_form': prefs_form,
     }
 
     return render(request, 'dashboard/index.html', context)
@@ -34,12 +36,12 @@ def user_prefs(request):
     """
     profile = get_object_or_404(Message, user=request.user)
     if request.method == "POST":
-        form = UpdatePreferencesForm(request.POST, instance=profile)
-        if form.is_valid():
-            form = form.save()
+        prefs_form = UpdatePreferencesForm(request.POST, instance=profile)
+        if prefs_form.is_valid():
+            prefs_form = prefs_form.save()
     else: 
-        form = UpdatePreferencesForm(instance=profile)
-    form = UpdatePreferencesForm()
+        prefs_form = UpdatePreferencesForm(instance=profile)
+    prefs_form = UpdatePreferencesForm()
 
     # context = {'message_text_form': form}
     # template = 'dashboard/index.html'
@@ -52,12 +54,12 @@ def message_to_self(request):
     """
     profile = get_object_or_404(Message, user=request.user)
     if request.method == "POST":
-        form = MessageToSelfForm(request.POST, instance=profile)
-        if form.is_valid():
-            form = form.save()
+        message_form = MessageToSelfForm(request.POST, instance=profile)
+        if message_form.is_valid():
+            message_form = message_form.save()
     else: 
-        form = MessageToSelfForm(instance=profile)
-    form = MessageToSelfForm()
+        message_form = MessageToSelfForm(instance=profile)
+    message_form = MessageToSelfForm()
 
     # context = {'message_text_form': form}
     # template = 'dashboard/index.html'

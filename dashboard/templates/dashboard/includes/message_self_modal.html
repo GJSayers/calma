@@ -2,7 +2,7 @@
 
 <form action="{% url 'message_to_self' %}" method="POST" class="message-self-form" id="message-self-form" aria-label="send message to self form">
     {% csrf_token %}
-    {{ form|crispy }}
+    {{ message_form|crispy }}
     <button class="btn btn-affirmative float-right" aria-label="submit updated details" id="submit-message" type="submit" value="Submit"><i class="fas fa-user-edit"></i> Send
         Message</button>
 </form>
