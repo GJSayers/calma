@@ -1,17 +1,21 @@
 <div>
     <div class="col-6 activities">
-    {% for activity in activities %}
-        <div class="row activities-list">
-            <div class="col-3 preference">
-                {{ activity.preferences }}
+    
+        {% for activity in activities %}
+            {% if request.user.is_authenticated %}
+            
+            <div class="row activities-list">
+                <div class="col-3 preference">
+                    {{ activity.preferences }}
+                </div>
+                <div class="col-7 title-link">
+                    <a href="{{ activity.content }}"> {{ activity.title }}</a>
+                </div>
+                <div class="col-2 minutes">
+                    {{ activity.vid_length }}
+                </div>
             </div>
-            <div class="col-7 title-link">
-                <a href="{{ activity.content }}"> {{ activity.title }}</a>
-            </div>
-            <div class="col-2 minutes">
-                {{ activity.vid_length }}
-            </div>
-        </div>
-    {% endfor %}
+            {% endif %}
+        {% endfor %}
     </div>
 </div>

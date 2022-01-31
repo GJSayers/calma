@@ -64,4 +64,5 @@ def message_to_self(request):
         # context = {'message_text_form': form}
         # template = 'dashboard/index.html'
         return redirect(reverse('dashboard'))
+    return ('LOGIN_URL')
 
