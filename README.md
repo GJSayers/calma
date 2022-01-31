@@ -64,13 +64,11 @@ Calma is a mindful dashboard allowing users to take time out of their days to ch
 
 # Project Overview
 
-![AmIResponsive](#)
-
----
 
 ### User Stories
 
 - User Story A: As a User, I wanted to be able to set a timer to set aside time to take a break <br />
+- User Story B: As a User, I would like to be able to find different ways to relax or exercise during the day to help my mental wellbeing.
 
 ## Opportunities arising from user stories:
 
@@ -99,8 +97,6 @@ A standard layout that is fully responsive on mobile devices and larger screens.
 We choose [Comfortaa](https://fonts.google.com/specimen/Comfortaa?query=comfortaa) because it has a relaxed feel and rounded aesthetic. <br />
 
 #### Media
-
-![AmIResponsive](static/images/paddy-wink.png)
 
 Background images were created by the team using [Affinity Designer](https://affinity.serif.com/en-us/) and animated using CSS3.
 
