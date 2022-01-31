@@ -11,13 +11,12 @@ def dashboard(request):
     Display the dashboard apps 
     """
     activities = Activities.objects.all()
-    print('activities')
     messages = Message.objects.all()
     user = request.user
     print ('requestuser', user)
     message_form = MessageToSelfForm()
     prefs_form = UpdatePreferencesForm()
-    
+        
 
     context = {
         'activities': activities,
@@ -53,15 +52,16 @@ def message_to_self(request):
     Handle the message to self submission
     """
     profile = get_object_or_404(Message, user=request.user)
-    if request.method == "POST":
-        message_form = MessageToSelfForm(request.POST, instance=profile)
-        if message_form.is_valid():
-            message_form = message_form.save()
-    else: 
-        message_form = MessageToSelfForm(instance=profile)
-    message_form = MessageToSelfForm()
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            message_form = MessageToSelfForm(request.POST, instance=profile)
+            if message_form.is_valid():
+                message_form = message_form.save()
+        else: 
+            message_form = MessageToSelfForm(instance=profile)
+        message_form = MessageToSelfForm()
 
-    # context = {'message_text_form': form}
-    # template = 'dashboard/index.html'
-    return redirect(reverse('dashboard'))
+        # context = {'message_text_form': form}
+        # template = 'dashboard/index.html'
+        return redirect(reverse('dashboard'))
 

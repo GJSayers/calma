@@ -1,7 +1,14 @@
 {% load crispy_forms_tags %}
 
+{% if request.user.is_authenticated %}
 <form action="{% url 'user_prefs' %}" method="POST" class="update-prefs-form" id="update-prefs-form" aria-label="update preferences form">
     {% csrf_token %}
     {{ prefs_form|crispy }}
     <button class="btn btn-affirmative float-right" aria-label="submit preferences" id="submit-prefs" type="submit" value="Submit"><i class="fas fa-user-edit"></i> Save</button>
 </form>
+{% else %}
+<div>
+    Link to Login goes here
+</div>
+
+{% endif %}
