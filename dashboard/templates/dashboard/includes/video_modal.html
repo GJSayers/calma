@@ -1,7 +1,7 @@
 <div>
     <div class="col-6 activities">
     
-        {% for activity in activities %}
+        {% for activity in activities|slice:":5" %}
             
             <div class="row activities-list">
                 <div class="col-3 preference">
