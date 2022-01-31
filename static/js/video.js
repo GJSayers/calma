@@ -8,19 +8,11 @@ export default class Video {
             activityVideo: root.querySelector(".activity-video"),
         };
 
-        console.log(this.el.activityLinks)
-        console.log(root.querySelectorAll(".activity-link"));
-
         this.el.activityLinks.forEach(item => {
-            console.log("foreach function running!");
-            item.addEventListener("mouseover", event => {
-                console.log(event)
-                console.log("Mouseover worked!")
-            })
+            item.addEventListener("mouseover", event => {})
         })
 
     }
-
 
     static getHTML() {
         return `

@@ -10,7 +10,6 @@ new Timer(
 const videoLinks = document.querySelectorAll(".activity-link");
 
 videoLinks.forEach(link => {
-            console.log(link)
             let youtubeID = link.href.split("=")[1];
   
             link.addEventListener("click", (event) => {
@@ -20,6 +19,5 @@ videoLinks.forEach(link => {
         })
         
             function updateIframe(youtubeID) {
-                console.log(youtubeID);
                 document.getElementById("videoPlayer").setAttribute("src", `https://www.youtube.com/embed/${youtubeID}`)
             }
