@@ -361,7 +361,7 @@ a {
 }
 
 @media only screen and (min-width: 768px) {
-  #time {
+  #clock {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -442,10 +442,6 @@ a {
     width: 60%;
     height: 50%;
   }
-  #clock {
-    font-size: 7rem;
-    margin: 10vh;
-  }
 }
 
 
@@ -455,6 +451,7 @@ a {
   right: 10px;
   font-weight: bold;
   cursor: pointer;
+  font-size: 2rem;
 }
 
   .timer-container, .break-container, .check-in-container, .note-container{
