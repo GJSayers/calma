@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HOST'), 'localhost', 'calma-mindful.dashboard.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HOST'), 'localhost', 'calma-mindful-dashboard.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-gjsayers-calma-zxor4j3yfk9.ws-eu29.gitpod.io', 'https://*.127.0.0.1']
 
