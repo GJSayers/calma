@@ -82,6 +82,21 @@ body {
   }
 }
 
+/* login */
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login a {
+  margin: 0.5rem;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+
+
 /*DARK TOGGLE*/
 /*toggle modified from a codepen by Marcus Burnette:https://codepen.io/mburnette/pen/LxNxNg*/
 .toggle-container {
@@ -92,7 +107,7 @@ body {
   margin-bottom: 1rem;
 }
 
-input[type="checkbox"] {
+.toggle-container input[type="checkbox"] {
   height: 0;
   width: 0;
   visibility: hidden;
