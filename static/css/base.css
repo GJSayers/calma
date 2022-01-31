@@ -451,6 +451,7 @@ a {
   right: 10px;
   font-weight: bold;
   cursor: pointer;
+  font-size: 2rem;
 }
 
   .timer-container, .break-container, .check-in-container, .note-container{
