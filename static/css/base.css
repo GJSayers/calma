@@ -550,4 +550,5 @@ a {
   background-color: var(--dock-icons);
   padding: 0.5 1rem;
   border-radius: 50%;
+  color: white;
 }
