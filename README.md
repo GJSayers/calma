@@ -2,7 +2,7 @@
 
 # Calma
 <img width="518" alt="iphone-screenshot" src="https://user-images.githubusercontent.com/69420622/151813176-ca0952b9-f38a-4912-a1b2-4d2fd1f6237e.png">
-
+<img width="470" alt="ipad-screenshot" src="https://user-images.githubusercontent.com/69420622/151816866-e0476dda-f204-44f8-b673-698131160600.png">
 
 
 ### [Live Site](https://calma-mindful-dashboard.herokuapp.com/)
