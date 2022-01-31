@@ -7,3 +7,17 @@ new Clock(
 new Timer(
     document.querySelector(".timer"));
 
+const videoLinks = document.querySelectorAll(".activity-link");
+
+videoLinks.forEach(link => {
+            let youtubeID = link.href.split("=")[1];
+  
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                updateIframe(youtubeID)
+            });
+        })
+        
+            function updateIframe(youtubeID) {
+                document.getElementById("videoPlayer").setAttribute("src", `https://www.youtube.com/embed/${youtubeID}`)
+            }

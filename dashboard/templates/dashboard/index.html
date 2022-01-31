@@ -9,14 +9,18 @@
     {% include 'dashboard/includes/all-stars.html' %}
 
     <div class="headbox">
-      {% include 'dashboard/includes/calma-header.html' %}
-      <div class="toggle-container">
-        <input type="checkbox" id="switch" name="theme" /><label
-          id="darkLight"
-          for="switch"
-          checked
-        ></label>
-      </div>
+        {% include 'dashboard/includes/calma-header.html' %}
+        <div class="login">
+            <a href="/accounts/login">Login <i class="fas fa-sign-in-alt"></i></a>
+            <div class="toggle-container">
+                <input type="checkbox" id="switch" name="theme" />
+                <label
+                id="darkLight"
+                for="switch"
+                checked
+                ></label>
+            </div>
+        </div>
     </div>
     <div class="fox">
       {% include 'dashboard/includes/fox.html' %}
@@ -43,7 +47,7 @@ if (this.checked) {
 <div id="dock-wrapper">
     <div id="dock">
         
-        <a href="#" id="timer-modal-btn" class="dock-icon">
+        <a href="#" id="timer-modal-btn" class="dock-icon svg-shadow">
             <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" fill="currentColor" class="bi bi-clock"
                 viewBox="0 0 16 16">
                 <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
@@ -53,7 +57,7 @@ if (this.checked) {
                 <h2>Timer</h2>
             <!-- </a> -->
             </a>
-            <a href="#" id="break-modal-btn" class="dock-icon">
+            <a href="#" id="break-modal-btn" class="dock-icon svg-shadow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" fill="currentColor"
                 class="bi bi-pause-btn" viewBox="0 0 16 16">
                 <path
@@ -63,7 +67,7 @@ if (this.checked) {
             </svg>
                 <h2>Take a Break</h2>
             </a>
-            <a href="#" id="check-in-modal-btn" class="dock-icon">
+            <a href="#" id="check-in-modal-btn" class="dock-icon svg-shadow">
             <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" fill="currentColor"
                 class="bi bi-person-check" viewBox="0 0 16 16">
                 <path
@@ -73,7 +77,7 @@ if (this.checked) {
             </svg>
                 <h2>Check In</h2>
             </a>
-            <a href="#" id="note-modal-btn" class="dock-icon">
+            <a href="#" id="note-modal-btn" class="dock-icon svg-shadow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" fill="currentColor"
                 class="bi bi-chat-text" viewBox="0 0 16 16">
                 <path
