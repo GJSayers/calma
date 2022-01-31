@@ -1,4 +1,8 @@
+{% extends 'base.html' %}
+
 {% load crispy_forms_tags %}
+
+{% block content %}
 {% if request.user.is_authenticated %}
 <div class="container">
   <div id="currentMindfulCheckResults" class="row"></div>
@@ -32,9 +36,8 @@
 <h1>Please Log In To See This Page</h1>
 {% endif %}
 
-
-<!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
-
+{% endblock %}
+{% block postloadjs %}
 <script
   type="text/javascript"
   src="https://canvasjs.com/assets/script/canvasjs.min.js"
@@ -183,3 +186,5 @@
     
   });
 </script>
+{% endblock %}
+
