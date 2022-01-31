@@ -361,7 +361,7 @@ a {
 }
 
 @media only screen and (min-width: 768px) {
-  #time {
+  #clock {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -441,10 +441,6 @@ a {
   .dock-modal {
     width: 60%;
     height: 50%;
-  }
-  #clock {
-    font-size: 7rem;
-    margin: 10vh;
   }
 }
 
