@@ -28,6 +28,9 @@
   src="https://canvasjs.com/assets/script/canvasjs.min.js"
 ></script>
 <script>
+
+  var jsonData = JSON.parse("{{data|escapejs}}");
+  console.log(jsonData);
   const mindCheckSubmit = document.getElementById('mindfulCheckSubmit');
   const currentMindfulCheckResults = document.getElementById(
     'currentMindfulCheckResults'
@@ -107,7 +110,7 @@
     e.preventDefault();
     var pieChart = new CanvasJS.Chart('pieChartContainer', {
       title: {
-        text: 'Mindful Check',
+        text: "Today's Results",
       },
       legend: {
         maxWidth: 350,

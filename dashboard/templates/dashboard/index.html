@@ -1549,6 +1549,9 @@
         ></label>
       </div>
     </div>
+
+    <a href="{% url 'mindful_check'%}" class="btn btn-primary btn-lg" role="button" >Mindful Check</a>
+
   </body>
   
   <script>
@@ -1568,6 +1571,6 @@ if (this.checked) {
 {% include 'dashboard/includes/timer_modal.html' %}
 {% include 'dashboard/includes/video_modal.html' %}
 {% include 'dashboard/includes/message_self_modal.html' %}
-{% include 'dashboard/includes/well_check_modal.html' %}
+{% comment %} {% include 'dashboard/includes/well_check_modal.html' %} {% endcomment %}
 
 {% endblock %}
