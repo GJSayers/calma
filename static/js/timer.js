@@ -12,7 +12,7 @@ export default class Timer {
 
         this.interval = null;
 
-        this.remainingSeconds = 600;
+        this.remainingSeconds = 10;
 
 
         this.updateInterfaceControls();
