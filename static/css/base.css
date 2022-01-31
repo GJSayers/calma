@@ -554,3 +554,18 @@ a {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+.message-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.message-container h2{
+  text-align: center;
+  background-color: var(--dock-icons);
+  padding: 0.5 1rem;
+  border-radius: 50%;
+
+}
