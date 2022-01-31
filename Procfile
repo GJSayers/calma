@@ -1,1 +1,1 @@
-web: gunicorn calma-mindful-dashboard.wsgi:application
+web: gunicorn calma.wsgi:application
