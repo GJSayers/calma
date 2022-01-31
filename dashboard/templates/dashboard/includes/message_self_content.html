@@ -1,9 +1,11 @@
-<h2>
-    {% for message in messages %}
+<div class="message-container">
+    <h2>
+        {% for message in messages %}
+                
+                    {% if message.user == user %}
+                        <p>{{ message.message_text }}</p>
+                    {% endif %}
             
-                {% if message.user == user %}
-                    <p>{{ message.message_text }}</p>
-                {% endif %}
-        
-    {% endfor %}
-</h2>
+        {% endfor %}
+    </h2>
+</div>
