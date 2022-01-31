@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.core import serializers
-from django.http import HttpResponse
+from django.http import JsonResponse
 import json
 
 from .models import UserPreferences, MindfulCheck, Message
@@ -24,7 +24,7 @@ def mindful_check(request):
 
     if request.method == "POST":
         print(request.POST)
-        form = WellnessCheckForm(request.POST, instance=profile)
+        form = WellnessCheckForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
     else:
@@ -32,11 +32,14 @@ def mindful_check(request):
     form = WellnessCheckForm()
             
     context = {
+        'data': {
+            'model': serializers.serialize('json', MindfulCheck.objects.all()),
+        },
         'form': form,
         'mindful_checks': mindful_checks,
     }
 
     return render(request, 'dashboard/mindful_check.html', context)
     
-def add_results(request):
+def mindful_results(request):
     pass

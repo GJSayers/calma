@@ -1,4 +1,5 @@
 {% load crispy_forms_tags %}
+{% if request.user.is_authenticated %}
 <div class="container">
   <div id="currentMindfulCheckResults" class="row"></div>
 </div>
@@ -6,9 +7,8 @@
   {% csrf_token %} {{ form }}
   <input type="submit" value="Model Submit (Chart Submit Below)" />
 </form>
-
 <form action="">
-  <input id="mindfulCheckSubmit" type="submit" value="Submit" />
+  <input id="mindfulCheckSubmit" type="submit" value="See Chart" />
 </form>
 
 <div class="container">
@@ -20,6 +20,10 @@
     </div>
   </div>
 </div>
+{% else %}
+<h1>Please Log In To See This Page</h1>
+{% endif %}
+
 
 <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
 
@@ -28,9 +32,10 @@
   src="https://canvasjs.com/assets/script/canvasjs.min.js"
 ></script>
 <script>
-
-  var jsonData = JSON.parse("{{data|escapejs}}");
-  console.log(jsonData);
+  var data = {
+    model: {{ data.model|safe }}
+  }
+  ;
   const mindCheckSubmit = document.getElementById('mindfulCheckSubmit');
   const currentMindfulCheckResults = document.getElementById(
     'currentMindfulCheckResults'
@@ -108,6 +113,18 @@
   mindCheckSubmit.addEventListener('click', (e) => {
     console.log(mindResults);
     e.preventDefault();
+    console.log(Object.keys(data.model[0].fields));
+
+    let chartMindResults = [];
+
+    let latestResults = data.model[data.model.length - 1].fields;
+
+    for (const [key, value] of Object.entries(latestResults)) {
+      chartMindResults.push({indexLabel: key, y: value})
+    }
+    chartMindResults.splice(0, 2)
+    chartMindResults.forEach(res => console.log('HERE: ' + res));
+
     var pieChart = new CanvasJS.Chart('pieChartContainer', {
       title: {
         text: "Today's Results",
@@ -121,19 +138,19 @@
           type: 'pie',
           showInLegend: true,
           legendText: '{indexLabel}',
-          dataPoints: mindResults,
+          dataPoints: chartMindResults,
         },
       ],
     });
     pieChart.render();
 
     let averageRes = [];
-    console.log(mindResults);
-    let mean = mindResults.reduce(function (accumulator, currentValue) {
+    console.log(chartMindResults);
+    let sum = mindResults.reduce(function (accumulator, currentValue) {
       return accumulator + parseInt(currentValue.y);
     }, 0);
 
-    console.log('mean', mean / 8);
+    console.log('mean', sum / 8);
 
     let date = new Date(),
       day = date.getDate(),
@@ -153,12 +170,12 @@
         allAverages = [];
         daysPassed = 1;
       }
-      allAverages.push({ x: new Date(day, month + 1, year), y: mean / 8 });
+      allAverages.push({ x: new Date(day, month + 1, year), y: sum / 8 });
       todaysDate = new Date().getDay();
     } else {
       console.log(todaysDate, setResult);
       allAverages.pop();
-      allAverages.push({ x: new Date(day, month + 1, year), y: mean / 8 });
+      allAverages.push({ x: new Date(day, month + 1, year), y: sum / 8 });
     }
     console.log(allAverages);
 
