@@ -43,8 +43,6 @@ def user_prefs(request):
         prefs_form = UpdatePreferencesForm(instance=profile)
     prefs_form = UpdatePreferencesForm()
 
-    # context = {'message_text_form': form}
-    # template = 'dashboard/index.html'
     return redirect(reverse('dashboard'))
 
 
@@ -61,7 +59,5 @@ def message_to_self(request):
         message_form = MessageToSelfForm(instance=profile)
     message_form = MessageToSelfForm()
 
-    # context = {'message_text_form': form}
-    # template = 'dashboard/index.html'
     return redirect(reverse('dashboard'))
 
