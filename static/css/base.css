@@ -563,17 +563,17 @@ a {
   align-items: center;
   margin: 0 auto;
   position: relative;
+  background-color: var(--dock-icons-bg);
+  border-radius: 10px;
+  padding: 0.5 1rem;
 }
 
 .message-container h2{
-  background-color: var(--dock-icons-bg);
-  border-radius: 10px;
+  margin: 0;
 }
 
 .message-container p{
   text-align: center;
-  background-color: var(--dock-icons-bg);
-  padding: 0.5 1rem;
   margin: 0;
   color: white;
 }
