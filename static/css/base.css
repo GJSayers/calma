@@ -22,7 +22,8 @@ html[data-theme="light"] {
   --nightcloud: hidden;
   --daycloud: visible;
   --dock-icons: #007eaf;
-  --dock-icons-hover: drop-shadow( 0px 0px 8px #007eaf)
+  --dock-icons-hover: drop-shadow( 0px 0px 8px #007eaf);
+  --dock-icons-bg: rgba(0, 126, 175, 0.7)
 }
 
 html[data-theme="dark"] {
@@ -35,7 +36,8 @@ html[data-theme="dark"] {
   --stars: visible;
   --daycloud: hidden;
   --dock-icons: #9800fd;
-  --dock-icons-hover: drop-shadow( 0px 0px 8px #9800fd)
+  --dock-icons-hover: drop-shadow( 0px 0px 8px #9800fd);
+  --dock-icons-bg: rgba(152, 0, 253, 0.7)
 }
 
 body {
@@ -543,12 +545,18 @@ a {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  position: relative;
 }
 
 .message-container h2{
+  background-color: var(--dock-icons-bg);
+  border-radius: 10px;
+}
+
+.message-container p{
   text-align: center;
-  background-color: var(--dock-icons);
+  background-color: var(--dock-icons-bg);
   padding: 0.5 1rem;
-  border-radius: 50%;
+  margin: 0;
   color: white;
 }
