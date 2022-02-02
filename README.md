@@ -1,6 +1,13 @@
-# Calma
+![calma-logo180 (1)](https://user-images.githubusercontent.com/69420622/151813122-cefd3eeb-facd-4150-ae14-471ead112590.png)
 
-### [Live Site](#)
+# Calma
+<img width="518" alt="iphone-screenshot" src="https://user-images.githubusercontent.com/69420622/151813176-ca0952b9-f38a-4912-a1b2-4d2fd1f6237e.png">
+<img width="470" alt="ipad-screenshot" src="https://user-images.githubusercontent.com/69420622/151816866-e0476dda-f204-44f8-b673-698131160600.png">
+
+
+### [Live Site](https://calma-mindful-dashboard.herokuapp.com/)
+
+
 
 ### [GitHub](https://github.com/GJSayers/calma)
 
@@ -57,13 +64,11 @@ Calma is a mindful dashboard allowing users to take time out of their days to ch
 
 # Project Overview
 
-![AmIResponsive](#)
-
----
 
 ### User Stories
 
 - User Story A: As a User, I wanted to be able to set a timer to set aside time to take a break <br />
+- User Story B: As a User, I would like to be able to find different ways to relax or exercise during the day to help my mental wellbeing.
 
 ## Opportunities arising from user stories:
 
@@ -93,13 +98,10 @@ We choose [Comfortaa](https://fonts.google.com/specimen/Comfortaa?query=comforta
 
 #### Media
 
-![AmIResponsive](static/images/paddy-wink.png)
-
 Background images were created by the team using [Affinity Designer](https://affinity.serif.com/en-us/) and animated using CSS3.
 
 #### Wireframes
 
-![AmIResponsive](#)
 ![mockup1](https://user-images.githubusercontent.com/69420622/151669049-1da3ff43-4330-4e9c-a32f-6e88895102b5.jpg)
 ![mockup2](https://user-images.githubusercontent.com/69420622/151669050-1c7b3af8-194c-4458-86e0-f2d7d958062e.jpg)
 ![mockup3](https://user-images.githubusercontent.com/69420622/151669052-9d26f8ae-2190-4da9-aec9-2bb5a683a718.png)
@@ -119,7 +121,7 @@ We made our wireframe with paper and pen as time was a constraint.
 
 - The navigation bar features an animated header and checkbox allowing the user to toggle between dark and light modes.
 
-#### Body
+#### Modals
 
 - Pomodoro Timer to set to remind to eg do yoga, drink water, get away from the desk etc.
 - Fitness/ activity section with links to videos / guided meditation / potentially games
@@ -127,9 +129,9 @@ We made our wireframe with paper and pen as time was a constraint.
   etc). These could potentially be shared / submitted.
 - Message to self section where the user can populate a DB with encouraging messages to pop up onto their screen at future intervals ( could initially be populated with some classic quotes.
 
-#### Footer
+#### Dock
 
-The footer features:
+The dock features large icons to open the four different modals
 
 ##### back to [top](#table-of-contents)
 
@@ -141,7 +143,7 @@ The footer features:
 
 [CSS 3](https://en.wikipedia.org/wiki/CSS)
 
-[Java Script](https://en.wikipedia.org/wiki/JavaScript)
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 #### 2.Integration
 
