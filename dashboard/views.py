@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
 from django.conf import settings
+import random
 
 from .models import UserPreferences, MindfulCheck, Message, Activities
 from .forms import MessageToSelfForm, UpdatePreferencesForm 
@@ -10,7 +11,8 @@ def dashboard(request):
     """
     Display the dashboard apps 
     """
-    activities = Activities.objects.all()
+    all_activities = Activities.objects.all()
+    display_activities = random.choices(all_activities, k=5)
     messages = Message.objects.all()
     user = request.user
     print ('requestuser', user)
@@ -19,7 +21,7 @@ def dashboard(request):
         
 
     context = {
-        'activities': activities,
+        'activities': display_activities,
         'messages': messages,
         'user': user,
         'message_form': message_form,
