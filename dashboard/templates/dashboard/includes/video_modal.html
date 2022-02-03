@@ -15,6 +15,24 @@
                 </div>
             </div>
 
-        {% endfor %}
+<div class="container">
+    <div class="col-12 activities">
+    {% for activity in activities %}
+        <div class="row activities-list">
+            <div class="col-3 preference">
+                {{ activity.preferences }}
+            </div>
+            <div class="col-7 title-link">
+                <a class="activity-link" href="{{ activity.content }}"> {{ activity.title }}</a>
+            </div>
+            <div class="col-2 minutes">
+                {{ activity.vid_length }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <hr>
+    <div class="activity-video embed-responsive embed-responsive-16by9">
+        <iframe id="videoPlayer" class="embed-responsive-item" src="https://www.youtube.com/embed/hQ-_oxkkKds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
